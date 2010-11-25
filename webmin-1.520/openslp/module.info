@@ -1,0 +1,15 @@
+desc_ca=Servidor OpenSLP
+version=1.520
+longdesc=Configure the service location protocol server.
+name=OpenSLP
+library=slp-lib.pl
+desc_ru_SU=óÅÒ×ÅÒ OpenSLP
+desc_ru_RU=Ñåðâåð OpenSLP
+desc_cz=OpenSLP server
+os_support=!windows
+desc_ms=Pelayan OpenSLP
+desc_nl=OpenSLP Server
+desc=OpenSLP Server
+desc_ru.UTF-8=Ð¡ÐµÑ€Ð²ÐµÑ€ OpenSLP
+category=servers
+depends=1.520

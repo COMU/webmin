@@ -1,0 +1,16 @@
+desc_ca=Sentinelles de Seguretat
+desc_es=Centinelas de Seguridad
+desc_ru_RU=Ñèñòåìà áåçîïàñíîñòè
+desc_cz=Bezpeènostní hlídaè
+readonly=1
+desc_nl=Beveiligings Sentries (Schildwachten)
+desc=Security Sentries
+category=system
+longdesc=Configure the portsentry, hostsentry and logcheck system security monitoring programs.
+version=1.520
+name=Sentry
+desc_ru_SU=óÉÓÔÅÍÁ ÂÅÚÏĞÁÓÎÏÓÔÉ
+desc_de=Sicherheits-Dienste
+os_support=!windows
+desc_ru.UTF-8=Ğ¡Ğ¸ÑÑ‚ĞµĞ¼Ğ° Ğ±ĞµĞ·Ğ¾Ğ¿Ğ°ÑĞ½Ğ¾ÑÑ‚Ğ¸
+depends=cron 1.520

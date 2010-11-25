@@ -1,0 +1,14 @@
+desc_ca=Paquets de Programari de Cluster
+version=1.520
+longdesc=Install RPMs, debian and solaris packages across multiple servers from one source.
+name=Cluster Software
+desc_fr=Paquetages logiciels de clusters
+desc_es=Cluster - Paquetes de Software
+desc_cz=Cluster - Softwarov� bal��ky
+os_support=pardus-linux cobalt-linux mandrake-linux redhat-linux open-linux msc-linux suse-linux united-linux turbo-linux debian-linux solaris openserver gentoo-linux trustix-linux coherent-linux slackware-linux windows
+desc_de=Cluster - Softwaremanagement
+desc_nl=Cluster Software Pakketten
+desc=Cluster Software Packages
+category=cluster
+depends=software servers 1.520
+desc_hu=Klaszter szoftver csomag

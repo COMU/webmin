@@ -1,0 +1,15 @@
+desc_ca=Servidor de Correu QMail
+version=1.520
+longdesc=Configure the QMail mail server, a simpler alternative to Sendmail.
+name=QMail
+library=qmail-lib.pl
+desc_ru_SU=îÁÓÔÒÏÊËÉ QMail
+desc_es=Configuración de QMail
+desc_ru_RU=Íàñòğîéêè QMail
+desc_cz=Konfigurace QMail
+os_support=!windows
+desc_de=QMail Mailserver
+desc=QMail Mail Server
+desc_ru.UTF-8=ĞĞ°ÑÑ‚Ñ€Ğ¾Ğ¹ĞºĞ¸ QMail
+category=servers
+depends=1.520

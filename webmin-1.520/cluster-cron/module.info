@@ -1,0 +1,12 @@
+desc_ca=Treballs Cron de Cluster
+version=1.520
+longdesc=Create scheduled Cron jobs that run on multiple servers simultaneously.
+desc_fr=T�ches Cron sur les clusters
+desc_es=Cluster - Tareas de Cron
+desc_cz=Cluster - Cron �koly
+os_support=pardus-linux solaris slackware-linux redhat-linux mandrake-linux debian-linux suse-linux united-linux hpux freebsd osf1 irix unixware openserver macos open-linux turbo-linux openbsd corel-linux cobalt-linux aix netbsd msc-linux generic-linux gentoo-linux trustix-linux coherent-linux
+desc_de=Cluster - Geplante Auftr&#228;ge (CRON)
+desc=Cluster Cron Jobs
+desc_nl=Cluster - Geplande Taken (Cron)
+category=cluster
+depends=cron 1.520

@@ -1,0 +1,11 @@
+desc_ca=Programes de Tipus Mime
+desc_ko_KR.UTF-8=MIME íƒ€ìž… í”„ë¡œê·¸ëž¨
+version=1.520
+longdesc=Edit the /etc/mailcap file, which maps MIME types to handler programs
+os_support=!windows
+desc_cz=Programy MIME Type
+desc_nl=MIME Type Programma's
+desc=MIME Type Programs
+desc_ko_KR.euc=MIME Å¸ÀÔ ÇÁ·Î±×·¥
+category=system
+depends=1.520

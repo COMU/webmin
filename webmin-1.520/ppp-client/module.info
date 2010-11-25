@@ -1,0 +1,10 @@
+desc_ca=Client PPP
+version=1.520
+longdesc=Configure the WV-Dial package to connect to the Internet with a modem PPP connection
+name=PPP
+os_support=*-linux
+desc_cz=PPP Dialup klient
+desc_nl=PPP Inbel Client
+desc=PPP Dialup Client
+category=net
+depends=proc init cron 1.520

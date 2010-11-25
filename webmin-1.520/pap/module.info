@@ -1,0 +1,15 @@
+desc_ca=Comptes PPP
+version=1.520
+longdesc=Set up a dialin server using mgetty and PPP.
+name=PPP
+desc_ru_SU=óÅÒ×ÅÒ PPP
+desc_es=Nombres y Claves de Acceso de Usuarios PPP
+desc_ru_RU=Ñåðâåð PPP
+desc_cz=PPP Dialin server
+os_support=redhat-linux mandrake-linux suse-linux united-linux slackware-linux debian-linux open-linux turbo-linux corel-linux msc-linux generic-linux gentoo-linux cobalt-linux solaris trustix-linux coherent-linux openmamba-linux
+desc_de=PPP Einwahl-Server
+desc_nl=PPP Inbel Server
+desc=PPP Dialin Server
+desc_ru.UTF-8=Ð¡ÐµÑ€Ð²ÐµÑ€ PPP
+category=net
+depends=inittab 1.520

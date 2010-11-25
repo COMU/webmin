@@ -1,0 +1,11 @@
+desc_ca=Ordres Shell de Cluster
+version=1.520
+longdesc=Run commands on multiple servers at once.
+desc_fr=Commandes shell de clusters
+desc_es=Cluster - Comandos de Consola 
+desc_cz=Cluster - Shell pøíkazy
+desc_de=Cluster - Kommandozeile
+desc=Cluster Shell Commands
+desc_nl=Cluster - Shell Opdrachten
+category=cluster
+depends=1.520

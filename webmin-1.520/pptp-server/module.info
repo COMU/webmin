@@ -1,0 +1,12 @@
+desc_pt_BR=Servidor VPN PPTP
+desc_ca=Servidor VPN PPTP
+version=1.520
+longdesc=Set up your system as a PPTP server so that Linux or Windows VPN clients can connect.
+name=PPTPd
+desc_es=Servidor VPN PPTP
+os_support=*-linux freebsd
+desc_cz=PPTP VPN server
+desc_nl=PPTP VPN Server
+desc=PPTP VPN Server
+category=net
+depends=proc net pptp-client 1.520

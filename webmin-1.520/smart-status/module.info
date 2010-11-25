@@ -1,0 +1,15 @@
+desc_ca=Estat de les Unitats SMART
+version=1.520
+longdesc=Check the status of IDE drives to detect problems and potential failures.
+desc_ru_SU=óÏÓÔÏÑÎÉÅ SMART ÄÉÓËÏ×
+desc_ru_RU=Ñîñòîÿíèå SMART äèñêîâ
+desc_es=Estado de Dispositivos SMART
+os_support=*-linux freebsd macos
+desc_de=SMART Festplatten-Status
+desc_cz=SMART stav diskù
+desc_nl=SMART Drive Status
+desc=SMART Drive Status
+desc_ru.UTF-8=Ğ¡Ğ¾ÑÑ‚Ğ¾ÑĞ½Ğ¸Ğµ SMART Ğ´Ğ¸ÑĞºĞ¾Ğ²
+desc_sk=SMART stav diskov
+category=hardware
+depends=1.520

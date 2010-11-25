@@ -1,0 +1,13 @@
+desc_ca=Canvi de Contrasenyes en Clusters
+version=1.520
+longdesc=Change passwords on multiple systems in a Webmin cluster at once.
+desc_fr=Changement des mots de passe des clusters
+desc_es=Cluster - Cambio de Contrase&#241;as
+desc_cz=Cluster - Zmìna hesel
+os_support=!windows
+desc_de=Cluster - Passwort &#228;ndern
+desc_ms=Cluster - Menukar Katalaluan
+desc=Cluster Change Passwords
+desc_nl=Cluster - Wachtwoord Wijzigen
+category=cluster
+depends=cluster-useradmin passwd useradmin 1.520

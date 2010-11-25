@@ -1,0 +1,10 @@
+desc_ca=Generador d'Informes de l'Anàlisi de Squid
+version=1.520
+longdesc=Configure and schedule SARG, a tool for generating reports from Squid access logs.
+desc_es=Generador de Informes de An&#225;lisis de Squid
+os_support=!windows
+desc_cz=Generátor analýzy Squid
+desc_nl=Squid Analyze Rapport Generator
+desc=Squid Report Generator
+category=servers
+depends=cron 1.520

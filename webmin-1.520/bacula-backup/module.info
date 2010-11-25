@@ -1,0 +1,9 @@
+desc_ca=Sistema de Còpies de Seguretat Bacula
+version=1.520
+longdesc=Configure Bacula to perform backups and restores manually or on schedule, for one or many systems.
+desc_pl=System kopii zapasowej Bacula
+desc_de=Bacula Backup System 
+desc=Bacula Backup System
+desc_nl=Bacula Backup Systeem
+category=system
+depends=proc cron 1.250 1.520

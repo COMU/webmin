@@ -1,0 +1,6 @@
+jabber_config=/usr/local/jabber/jabber.xml
+jabber_dir=/usr/local/jabber
+jabber_daemon=/usr/local/jabber/jabberd/jabberd
+start_cmd=/usr/local/jabber/jabberd/jabberd -h localhost &
+stop_cmd=^C
+

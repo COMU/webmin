@@ -1,0 +1,12 @@
+desc_ca=Monitor Heartbeat
+version=1.520
+longdesc=Configure the Heartbeat package for automatic server failover in a cluster.
+name=Heartbeat
+desc_es=Monitor Heartbeat
+desc_cz=Heartbeat monitor
+os_support=*-linux freebsd
+desc_de=Heartbeat-Monitor
+desc_nl=Hartslag Monitor
+desc=Heartbeat Monitor
+category=cluster
+depends=init 1.520

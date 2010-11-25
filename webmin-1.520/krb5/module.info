@@ -1,0 +1,13 @@
+desc_ca=Configuració de Kerberos5
+version=1.520
+longdesc=Configure the Kerberos 5 client on your system.
+name=Kerberos5 Configuration
+desc_fr=Kerberos5
+desc_no=Kerberos5
+desc_cz=Kerberos5
+os_support=*-linux
+desc_de=Kerberos5
+desc_nl=Kerberos5 Configuratie
+desc=Kerberos5
+category=net
+depends=1.520

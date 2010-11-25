@@ -1,0 +1,8 @@
+desc_ca=Actualitzacions de Paquets de Programes
+version=1.520
+longdesc=Displays available package updates from YUM, APT or other update systems
+os_support=pardus-linux redhat-linux debian-linux mandrake-linux/10.2-* solaris
+desc=Software Package Updates
+desc_ru.UTF-8=Обновление программных пакетов
+category=system
+depends=software cron mailboxes 1.520

@@ -1,0 +1,16 @@
+desc_ca=Servidor IM Jabber
+cpan=1
+desc_es=Jabber - Mensajer&#237;a Instant&#225;nea
+desc_ru_RU=Ñåğâåğ ñîîáùåíèé Jabber
+desc_cz=Jabber IM server
+desc_nl=Jabber IM Server
+desc=Jabber IM Server
+category=servers
+longdesc=Configure the multi-protocol Jabber messaging server.
+version=1.520
+name=Jabber
+desc_ru_SU=óÅÒ×ÅÒ ÓÏÏÂİÅÎÉÊ Jabber
+desc_de=Jabber IM-Server
+os_support=!windows
+desc_ru.UTF-8=Ğ¡ĞµÑ€Ğ²ĞµÑ€ ÑĞ¾Ğ¾Ğ±Ñ‰ĞµĞ½Ğ¸Ğ¹ Jabber
+depends=1.520

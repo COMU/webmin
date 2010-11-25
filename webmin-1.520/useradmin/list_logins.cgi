@@ -1,0 +1,54 @@
+#!/usr/local/bin/perl
+# list_logins.cgi
+# Display the last login locations, tty, login time and duration
+
+require './user-lib.pl';
+&ReadParse();
+
+# Work out who we can list for
+$u = $in{'username'};
+if (!$access{'logins'}) {
+	&error($text{'logins_elist'});
+	}
+elsif ($access{'logins'} ne "*") {
+	$u || &error($text{'logins_elist'});
+	local @ul = split(/\s+/, $access{'logins'});
+	&indexof($u,@ul) >= 0 ||
+		&error(&text('logins_elistu', $u));
+	}
+
+&ui_print_header(undef, $text{'logins_title'}, "", "list_logins");
+
+# Build the table data
+@table = ( );
+foreach $l (&list_last_logins($u, $config{'last_count'})) {
+	push(@table, [
+		$u ? ( ) : ( "<tt>".&html_escape($l->[0])."</tt>" ),
+		&html_escape($l->[2]) || $text{'logins_local'},
+		&html_escape($l->[1]),
+		&html_escape($l->[3]),
+		$l->[4] ? ( &html_escape($l->[4]),
+			    &html_escape($l->[5]) )
+			: { 'type' => 'string', 'columns' => 2,
+			    'value' => "<i>$text{'logins_still'}</i>" },
+		]);
+	}
+
+# Show the table
+if ($u) {
+	print &ui_subheading(&text('logins_head', $u));
+	}
+print &ui_columns_table(
+	[ $u ? ( ) : ( $text{'user'} ), $text{'logins_from'},
+	  $text{'logins_tty'}, $text{'logins_in'}, $text{'logins_out'},
+	  $text{'logins_for'} ],
+	100,
+	\@table,
+	undef,
+	0,
+	undef,
+	$text{'logins_none'},
+	);
+
+&ui_print_footer("", $text{'index_return'});
+

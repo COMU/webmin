@@ -1,0 +1,8 @@
+desc_ca=Zones Solaris
+version=1.520
+nozone=1
+longdesc=Create and manage Solaris 10 zones.
+os_support=solaris/10-*
+desc=Solaris Zones
+category=system
+depends=net mount time useradmin 1.520

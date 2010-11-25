@@ -1,0 +1,7 @@
+desc_ca=Tallafocs BSD
+os_support=freebsd macos
+version=1.520
+longdesc=Configure a BSD firewall using IPFW, by creating and editing rules.
+desc=BSD Firewall
+category=net
+depends=net init 1.520

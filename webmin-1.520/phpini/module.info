@@ -1,0 +1,11 @@
+desc_ca=Configuració de PHP
+desc_ko_KR.UTF-8=PHP ì„¤ì •
+version=1.520
+longdesc=Configure PHP settings for the whole system or invidivual Apache virtual servers.
+desc_it=Configurazione di PHP
+os_support=!windows
+desc_cz=PHP konfigurace
+desc=PHP Configuration
+desc_nl=PHP Configuratie
+desc_ko_KR.euc=PHP ¼³Á¤
+depends=1.520

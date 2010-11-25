@@ -1,0 +1,14 @@
+desc_ca=Motor de Configuració
+version=1.520
+longdesc=Configure the CFengine program, for checking and maintaining various system-administration settings.
+name=CFEngine
+desc_fr=Moteur de configuration
+desc_es=Motor de Configuración
+desc_cz=Konfiguraèní stroj
+desc_de=Konfigurations-Automat
+os_support=!windows
+desc_nl=Configuratie Engine
+desc=Configuration Engine
+category=cluster
+desc_sv=Konfigurations Motor
+depends=1.520
