@@ -1,0 +1,11 @@
+desc_ca=Configuració de VPN IPsec
+version=1.530
+longdesc=Set up a client or server for an IPsec VPN using FreeSWAN.
+name=IPsec
+desc_es=Configuración de VPN IPsec
+os_support=*-linux
+desc_cz=Konfiguace IPsec VPN
+desc_nl=IPsec VPN Configuratie
+desc=IPsec VPN Configuration
+category=net
+depends=net syslog proc 1.530

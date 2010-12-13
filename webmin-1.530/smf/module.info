@@ -1,0 +1,8 @@
+desc_ca=Configuració d'Utilitats de Gestió de Serveis
+version=1.530
+longdesc=Edit services under control of Service Manangement Facility SMF(1).
+name=SMF
+os_support=solaris/10-*
+desc=Service Management Facility Configuration
+category=system
+depends=1.530

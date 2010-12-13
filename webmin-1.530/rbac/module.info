@@ -1,0 +1,7 @@
+desc_ca=RBAC i Projectes
+os_support=solaris/10 solaris{-r "/etc/user_attr"}
+version=1.530
+longdesc=Manage RBAC user attributes, profiles and authorizations.
+desc=RBAC and Projects
+category=system
+depends=1.530

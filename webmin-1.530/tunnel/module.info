@@ -1,0 +1,13 @@
+desc_ca=T˙nel HTTP
+desc_ko_KR.UTF-8=HTTP ÌÑ∞ÎÑê
+version=1.530
+longdesc=Connect to another HTTP server via a tunnel through the Webmin server.
+desc_it=Tunnel HTTP
+name=Tunnel
+desc_es=T&#250;nel HTTP
+desc_de=HTTP-Tunnel Konfiguration
+desc_cz=Tunel HTTP
+desc_nl=HTTP Tunnel
+desc=HTTP Tunnel
+desc_ko_KR.euc=HTTP ≈Õ≥Œ
+depends=1.530

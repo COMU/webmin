@@ -1,0 +1,7 @@
+desc_ca=Funcions Planificades de Webmin
+version=1.530
+longdesc=Define Webmin module functions that are called on a regular schedule by the Webmin webserver
+desc=Scheduled Webmin Functions
+hidden=1
+category=webmin
+depends=1.530

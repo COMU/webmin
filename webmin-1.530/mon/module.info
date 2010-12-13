@@ -1,0 +1,15 @@
+desc_ca=Monitor de Serveis MON
+version=1.530
+longdesc=Setup MON, a powerful service monitor and alerting system.
+name=mon
+desc_ru_SU=íÏÎÉÔÏÒ ÓÌÕÖÂ MON
+desc_ru_RU=Ìîíèòîğ ñëóæá MON
+desc_es=Monitor de Servicio MON
+desc_cz=MON - Monitorování slu¾eb
+readonly=1
+os_support=*-linux
+desc_de=MON Dienste-Monitor
+desc=MON Service Monitor
+desc_ru.UTF-8=ĞœĞ¾Ğ½Ğ¸Ñ‚Ğ¾Ñ€ ÑĞ»ÑƒĞ¶Ğ± MON
+category=system
+depends=init 1.530

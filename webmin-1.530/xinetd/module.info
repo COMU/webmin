@@ -1,0 +1,7 @@
+version=1.530
+longdesc=Edit servers handled by Xinetd, a replacement for inetd.
+desc=Network Services
+name=Xinetd
+category=net
+depends=1.530
+risk=low medium high

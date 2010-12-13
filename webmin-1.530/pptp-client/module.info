@@ -1,0 +1,11 @@
+desc_pt_BR=Cliente VPN PPTP
+desc_ca=Client VPN PPTP
+version=1.530
+longdesc=Configure and establish connections to a VPN server using the PPTP protocol.
+name=PPTP
+os_support=*-linux
+desc_cz=PPTP VPN klient
+desc_nl=PPTP VPN Client
+desc=PPTP VPN Client
+category=net
+depends=net proc syslog 1.530

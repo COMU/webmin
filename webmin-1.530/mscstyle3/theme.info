@@ -1,0 +1,4 @@
+version=1.530
+longdesc=The new default theme by MSC.Linux, which displays category buttons on every page.
+desc=MSC.Linux Theme
+depends=1.530

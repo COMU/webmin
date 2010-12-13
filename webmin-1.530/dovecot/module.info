@@ -1,0 +1,12 @@
+desc_ca=Servidor IMAP/POP3 Dovecot
+desc_zh_TW.UTF-8=Dovecot IMAP/POP3 дјєжњЌе™Ё
+version=1.530
+longdesc=Configure the Dovecot IMAP and POP3 mail retrieval server.
+desc_ru_RU=Сервер IMAP/POP3 (Dovecot)
+desc_es=Dovecot: Servidor de IMAP/POP3
+os_support=!windows
+desc_cz=Dovecot IMAP/POP3 Server
+desc_nl=Dovecot IMAP/POP3 Server
+desc=Dovecot IMAP/POP3 Server
+category=servers
+depends=init 1.530

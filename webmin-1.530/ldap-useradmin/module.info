@@ -1,0 +1,13 @@
+desc_pt_BR=Usu&#225;rios e Grupos do LDAP
+desc_ca=Usuaris i Grups LDAP
+version=1.530
+cpan=1
+longdesc=Manage users and groups stored in an LDAP database, used for Unix, Samba and Cyrus IMAP authentication.
+desc_es=Usuarios y Grupos LDAP
+desc_cz=LDAP u¾ivatelé a skupiny
+desc_de=LDAP Nutzer und Gruppen
+os_support=!windows
+desc_nl=LDAP Gebruikers en Groepen
+desc=LDAP Users and Groups
+category=system
+depends=useradmin ldap-client 1.530

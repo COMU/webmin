@@ -1,0 +1,9 @@
+desc_ca=Recursos NFS
+version=1.530
+longdesc=Edit file shares as defined in the Irix /etc/exports file
+name=SGIExports
+os_support=irix
+desc_de=NFS-Exporte
+desc=NFS Exports
+category=net
+depends=1.530

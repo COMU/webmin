@@ -1,0 +1,10 @@
+desc_pt_BR=Cliente LDAP
+desc_ca=Client LDAP
+version=1.530
+cpan=1
+longdesc=Configure your system as an LDAP client for users and groups.
+os_support=*-linux
+desc=LDAP Client
+desc_nl=LDAP Client
+category=system
+depends=1.530

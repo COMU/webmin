@@ -1,0 +1,11 @@
+desc_ca=Proxy FTP Frox
+version=1.530
+longdesc=Configure Frox, a transparent proxy for FTP clients.
+desc_es=Frox - Proxy FTP
+os_support=*-linux freebsd
+desc_de=Frox FTP-Proxyserver
+desc_cz=Frox FTP-Proxy server
+desc_nl=Frox FTP Proxy-server
+desc=Frox FTP Proxy
+category=servers
+depends=1.530

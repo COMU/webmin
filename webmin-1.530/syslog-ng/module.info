@@ -1,0 +1,6 @@
+desc_ca=Registres del Sistema NG
+version=1.530
+longdesc=Configure the Syslog-NG server on your system and view its log files.
+desc=System Logs NG
+category=system
+depends=proc 1.530

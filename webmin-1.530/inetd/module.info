@@ -1,0 +1,7 @@
+os_support=solaris *-linux hpux freebsd unixware openserver osf1 macos openbsd netbsd irix
+version=1.530
+longdesc=Edit services in /etc/inetd.conf, /etc/services and /etc/rpc.
+desc=Network Services and Protocols
+category=net
+depends=1.530
+risk=low medium high

@@ -1,0 +1,10 @@
+desc_pt_BR=Servidor LDAP
+desc_ca=Servidor LDAP
+perldepends=Net::LDAP
+version=1.530
+longdesc=Manage the OpenLDAP server and objects in its database
+desc_ru_RU=Сервер LDAP
+desc=LDAP Server
+desc_nl=LDAP Server
+category=servers
+depends=ldap-client 1.530

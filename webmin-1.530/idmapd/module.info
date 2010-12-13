@@ -1,0 +1,12 @@
+desc_ca=Dimoni Idmapd
+version=1.530
+longdesc=Manage the NFS ID mapping daemon.
+name=Idmapd Daemon
+desc_fr=d&#233;mon idmapd
+desc_cz=Démon idmapd
+os_support=*-linux
+desc_de=IdmapD&#45;Daemon
+desc_nl=IDmapd Deamon
+desc=idmapd daemon
+category=net
+depends=1.530
