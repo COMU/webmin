@@ -1,0 +1,1531 @@
+diff -Nuar webmin-1.530.orig/apache/config-pardus-linux webmin-1.530/apache/config-pardus-linux
+--- webmin-1.530.orig/apache/config-pardus-linux	1970-01-01 02:00:00.000000000 +0200
++++ webmin-1.530/apache/config-pardus-linux	2010-12-13 18:42:14.000000000 +0200
+@@ -0,0 +1,17 @@
++show_list=0
++httpd_dir=/etc/apache2
++httpd_path=/usr/sbin/apache2
++httpd_conf=/etc/apache2/httpd.conf
++apachectl_path=/usr/sbin/apachectl
++virt_name=httpd.conf
++virt_file=/etc/apache2/httpd.conf
++start_cmd=service apache start
++stop_cmd=service apache stop
++show_order=0
++max_servers=100
++test_config=1
++test_manual=0
++test_always=0
++test_apachectl=1
++auto_mods=1
++show_names=0
+diff -Nuar webmin-1.530.orig/apache/module.info webmin-1.530/apache/module.info
+--- webmin-1.530.orig/apache/module.info	2010-12-01 18:40:45.000000000 +0200
++++ webmin-1.530/apache/module.info	2010-12-13 19:28:45.343318153 +0200
+@@ -11,7 +11,7 @@
+ name=Apache
+ desc_tr=Apache Web Sunucusu
+ desc_de=Apache Webserver
+-os_support=solaris redhat-linux mandrake-linux debian-linux slackware-linux suse-linux united-linux aix hpux freebsd osf1 irix unixware openserver macos open-linux turbo-linux openbsd corel-linux cobalt-linux lfs-linux netbsd msc-linux generic-linux gentoo-linux trustix-linux sol-linux coherent-linux openmamba-linux windows
++os_support=pardus-linux solaris redhat-linux mandrake-linux debian-linux slackware-linux suse-linux united-linux aix hpux freebsd osf1 irix unixware openserver macos open-linux turbo-linux openbsd corel-linux cobalt-linux lfs-linux netbsd msc-linux generic-linux gentoo-linux trustix-linux sol-linux coherent-linux openmamba-linux windows
+ desc_zh_CN=Apache ∑˛ŒÒ∆˜
+ risk=low medium high
+ desc_ja_JP.UTF-8=Apache Web„Çµ„Éº„Éê
+diff -Nuar webmin-1.530.orig/bind8/config-pardus-linux webmin-1.530/bind8/config-pardus-linux
+--- webmin-1.530.orig/bind8/config-pardus-linux	1970-01-01 02:00:00.000000000 +0200
++++ webmin-1.530/bind8/config-pardus-linux	2010-12-13 19:02:09.000000000 +0200
+@@ -0,0 +1,44 @@
++soa_style=0
++named_path=/usr/sbin/named
++named_conf=/etc/bind/named.conf
++named_group=/usr/sbin/named
++named_usr=/usr/sbin/named
++zones_file=/etc/bind/named.conf
++pid_file=/var/run/named.pid
++start_cmd=service bind start
++show_list=0
++records_order=0
++max_zones=50
++rev_def=0
++support_aaaa=1
++allow_comments=0
++allow_wild=1
++allow_long=0
++master_ttl=1
++whois_cmd=whois
++short_names=0
++updserial_def=0
++updserial_on=1
++updserial_man=1
++ndc_cmd=ndc
++forwardzonefilename_format=ZONE.hosts
++reversezonefilename_format=ZONE.rev
++rev_must=0
++ipv6_mode=1
++allow_underscore=1
++by_view=0
++confirm_zone=1
++confirm_rec=0
++no_chroot=0
++relative_paths=0
++rndc_cmd=rndc
++no_pid_chroot=0
++soa_start=0
++rndc_conf=/etc/bind/rndc.conf
++rndcconf_cmd=rndc-confgen
++largezones=0
++checkzone=named-checkzone
++keygen=dnssec-keygen
++signzone=dnssec-signzone
++checkconf=named-checkconf
++other_slaves=1
+diff -Nuar webmin-1.530.orig/bind8/module.info webmin-1.530/bind8/module.info
+--- webmin-1.530.orig/bind8/module.info	2010-12-01 18:40:46.000000000 +0200
++++ webmin-1.530/bind8/module.info	2010-12-13 19:30:22.807318406 +0200
+@@ -11,7 +11,7 @@
+ name=BIND
+ desc_tr=BIND DNS Sunucusu
+ desc_de=BIND DNS-Server
+-os_support=slackware-linux redhat-linux mandrake-linux solaris debian-linux suse-linux united-linux hpux freebsd osf1 irix unixware openserver macos open-linux turbo-linux openbsd corel-linux cobalt-linux/5.0-* aix netbsd msc-linux generic-linux gentoo-linux trustix-linux sol-linux coherent-linux openmamba-linux windows
++os_support=pardus-linux slackware-linux redhat-linux mandrake-linux solaris debian-linux suse-linux united-linux hpux freebsd osf1 irix unixware openserver macos open-linux turbo-linux openbsd corel-linux cobalt-linux/5.0-* aix netbsd msc-linux generic-linux gentoo-linux trustix-linux sol-linux coherent-linux openmamba-linux windows
+ desc_zh_CN=BIND 8 DNS ∑˛ŒÒ∆˜
+ risk=low medium high
+ desc_ja_JP.UTF-8=BIND DNS „Çµ„Éº„Éê
+diff -Nuar webmin-1.530.orig/cluster-cron/module.info webmin-1.530/cluster-cron/module.info
+--- webmin-1.530.orig/cluster-cron/module.info	2010-12-01 18:40:46.000000000 +0200
++++ webmin-1.530/cluster-cron/module.info	2010-12-13 19:36:51.167444907 +0200
+@@ -4,7 +4,7 @@
+ desc_fr=T‚ches Cron sur les clusters
+ desc_es=Cluster - Tareas de Cron
+ desc_cz=Cluster - Cron ˙koly
+-os_support=solaris slackware-linux redhat-linux mandrake-linux debian-linux suse-linux united-linux hpux freebsd osf1 irix unixware openserver macos open-linux turbo-linux openbsd corel-linux cobalt-linux aix netbsd msc-linux generic-linux gentoo-linux trustix-linux coherent-linux
++os_support=pardus-linux solaris slackware-linux redhat-linux mandrake-linux debian-linux suse-linux united-linux hpux freebsd osf1 irix unixware openserver macos open-linux turbo-linux openbsd corel-linux cobalt-linux aix netbsd msc-linux generic-linux gentoo-linux trustix-linux coherent-linux
+ desc_de=Cluster - Geplante Auftr&#228;ge (CRON)
+ desc=Cluster Cron Jobs
+ desc_nl=Cluster - Geplande Taken (Cron)
+diff -Nuar webmin-1.530.orig/cluster-software/module.info webmin-1.530/cluster-software/module.info
+--- webmin-1.530.orig/cluster-software/module.info	2010-12-01 18:40:45.000000000 +0200
++++ webmin-1.530/cluster-software/module.info	2010-12-13 19:38:02.423455248 +0200
+@@ -5,7 +5,7 @@
+ desc_fr=Paquetages logiciels de clusters
+ desc_es=Cluster - Paquetes de Software
+ desc_cz=Cluster - SoftwarovÈ balÌËky
+-os_support=cobalt-linux mandrake-linux redhat-linux open-linux msc-linux suse-linux united-linux turbo-linux debian-linux solaris openserver gentoo-linux trustix-linux coherent-linux slackware-linux windows
++os_support=pardus-linux cobalt-linux mandrake-linux redhat-linux open-linux msc-linux suse-linux united-linux turbo-linux debian-linux solaris openserver gentoo-linux trustix-linux coherent-linux slackware-linux windows
+ desc_de=Cluster - Softwaremanagement
+ desc_nl=Cluster Software Pakketten
+ desc=Cluster Software Packages
+diff -Nuar webmin-1.530.orig/cluster-useradmin/module.info webmin-1.530/cluster-useradmin/module.info
+--- webmin-1.530.orig/cluster-useradmin/module.info	2010-12-01 18:40:46.000000000 +0200
++++ webmin-1.530/cluster-useradmin/module.info	2010-12-13 19:38:39.671443536 +0200
+@@ -5,7 +5,7 @@
+ desc_fr=Utilisateurs et groupes de clusters
+ desc_es=Cluster - Usuarios y Grupos
+ desc_cz=Cluster - UæivatelÈ a skupiny
+-os_support=slackware-linux redhat-linux mandrake-linux solaris debian-linux suse-linux united-linux hpux freebsd osf1 open-linux unixware turbo-linux openbsd corel-linux cobalt-linux irix netbsd msc-linux aix generic-linux openserver macos gentoo-linux trustix-linux coherent-linux
++os_support=pardus-linux slackware-linux redhat-linux mandrake-linux solaris debian-linux suse-linux united-linux hpux freebsd osf1 open-linux unixware turbo-linux openbsd corel-linux cobalt-linux irix netbsd msc-linux aix generic-linux openserver macos gentoo-linux trustix-linux coherent-linux
+ desc_de=Cluster - Benutzer und Gruppen
+ desc_nl=Cluster - Gebruikers en Groepen
+ desc=Cluster Users and Groups
+diff -Nuar webmin-1.530.orig/cron/config-pardus-linux webmin-1.530/cron/config-pardus-linux
+--- webmin-1.530.orig/cron/config-pardus-linux	1970-01-01 02:00:00.000000000 +0200
++++ webmin-1.530/cron/config-pardus-linux	2010-11-11 01:26:13.000000000 +0200
+@@ -0,0 +1,24 @@
++cron_input=1
++cron_deny_file=/var/spool/cron/deny
++cron_dir=/var/spool/cron/crontabs
++cron_deny_all=2
++cron_delete_command=crontab -u USER -r
++cron_user_delete_command=crontab -r
++cron_edit_command=crontab -u USER -e
++cron_user_edit_command=crontab -e
++cron_allow_file=/var/spool/cron/allow
++cron_get_command=crontab -u USER -l
++cron_user_get_command=crontab -l
++vixie_cron=0
++max_len=80
++run_parts=run-parts
++show_run=0
++show_time=0
++match_mode=0
++match_user=1
++kill_subs=0
++show_comment=0
++hourly_only=0
++max_jobs=100
++vixie_cron=0
++
+diff -Nuar webmin-1.530.orig/cron/.directory webmin-1.530/cron/.directory
+--- webmin-1.530.orig/cron/.directory	1970-01-01 02:00:00.000000000 +0200
++++ webmin-1.530/cron/.directory	2010-12-13 20:38:08.457074947 +0200
+@@ -0,0 +1,3 @@
++[Dolphin]
++Timestamp=2010,12,13,20,38,8
++ViewMode=1
+diff -Nuar webmin-1.530.orig/cron/module.info webmin-1.530/cron/module.info
+--- webmin-1.530.orig/cron/module.info	2010-12-01 18:40:46.000000000 +0200
++++ webmin-1.530/cron/module.info	2010-12-13 20:37:51.933200222 +0200
+@@ -10,7 +10,7 @@
+ name=Cron Manager
+ desc_tr=Zamanland˝r˝lm˝˛ Gˆrevler
+ desc_de=Geplante Auftr&#228;ge (Cron)
+-os_support=solaris slackware-linux redhat-linux mandrake-linux debian-linux suse-linux united-linux hpux freebsd osf1 irix unixware openserver macos open-linux turbo-linux openbsd corel-linux cobalt-linux aix netbsd msc-linux generic-linux gentoo-linux trustix-linux sol-linux coherent-linux openmamba-linux windows
++os_support=pardus-linux solaris slackware-linux redhat-linux mandrake-linux debian-linux suse-linux united-linux hpux freebsd osf1 irix unixware openserver macos open-linux turbo-linux openbsd corel-linux cobalt-linux aix netbsd msc-linux generic-linux gentoo-linux trustix-linux sol-linux coherent-linux openmamba-linux windows
+ desc_sk=Cron Pl·novaË ˙loh
+ desc_zh_CN=Cron »ŒŒÒµ˜∂»
+ risk=low medium high
+diff -Nuar webmin-1.530.orig/dhcpd/config-pardus-linux webmin-1.530/dhcpd/config-pardus-linux
+--- webmin-1.530.orig/dhcpd/config-pardus-linux	1970-01-01 02:00:00.000000000 +0200
++++ webmin-1.530/dhcpd/config-pardus-linux	2010-12-13 20:46:56.077082473 +0200
+@@ -0,0 +1,15 @@
++dhcpd_conf=/etc/dhcp/dhcpd.conf
++pid_file=/var/run/dhcpd.pid
++dhcpd_path=/usr/sbin/dhcpd
++lease_file=/var/dhcp/dhcpd.leases
++lease_sort=0
++dhcpd_nocols=5
++lease_tz=0
++start_cmd=service dhcp start
++stop_cmd=service dhcp stop
++restart_cmd=service dhcp restart
++show_ip=0
++show_mac=0
++group_name=0
++display_max=100
++desc_name=0
+diff -Nuar webmin-1.530.orig/dhcpd/module.info webmin-1.530/dhcpd/module.info
+--- webmin-1.530.orig/dhcpd/module.info	2010-12-01 18:40:45.000000000 +0200
++++ webmin-1.530/dhcpd/module.info	2010-12-13 20:53:47.589078709 +0200
+@@ -21,7 +21,7 @@
+ desc_ru_SU=Û≈“◊≈“ DHCP
+ desc_tr=DHCP Sunucusu
+ desc_de=DHCP-Server
+-os_support=debian-linux freebsd osf1 redhat-linux mandrake-linux slackware-linux solaris suse-linux united-linux unixware openserver open-linux turbo-linux openbsd corel-linux cobalt-linux irix netbsd msc-linux generic-linux gentoo-linux hpux trustix-linux macos sol-linux coherent-linux openmamba-linux
++os_support=pardus-linux debian-linux freebsd osf1 redhat-linux mandrake-linux slackware-linux solaris suse-linux united-linux unixware openserver open-linux turbo-linux openbsd corel-linux cobalt-linux irix netbsd msc-linux generic-linux gentoo-linux hpux trustix-linux macos sol-linux coherent-linux openmamba-linux
+ desc_ru.UTF-8=–°–µ—Ä–≤–µ—Ä DHCP
+ desc_sk=DHCP Server
+ desc_ko_KR.euc=DHCP º≠πˆ 
+diff -Nuar webmin-1.530.orig/.directory webmin-1.530/.directory
+--- webmin-1.530.orig/.directory	1970-01-01 02:00:00.000000000 +0200
++++ webmin-1.530/.directory	2010-12-13 19:35:14.313316243 +0200
+@@ -0,0 +1,3 @@
++[Dolphin]
++Timestamp=2010,12,13,19,35,14
++ViewMode=1
+diff -Nuar webmin-1.530.orig/dovecot/config-pardus-linux webmin-1.530/dovecot/config-pardus-linux
+--- webmin-1.530.orig/dovecot/config-pardus-linux	1970-01-01 02:00:00.000000000 +0200
++++ webmin-1.530/dovecot/config-pardus-linux	2010-11-12 00:35:13.000000000 +0200
+@@ -0,0 +1,3 @@
++pid_file=/var/run/dovecot/master.pid
++dovecot=/usr/sbin/dovecot
++dovecot_config=/etc/dovecot/dovecot.conf
+diff -Nuar webmin-1.530.orig/exports/config-pardus-linux webmin-1.530/exports/config-pardus-linux
+--- webmin-1.530.orig/exports/config-pardus-linux	1970-01-01 02:00:00.000000000 +0200
++++ webmin-1.530/exports/config-pardus-linux	2010-08-29 05:23:39.000000000 +0300
+@@ -0,0 +1,4 @@
++restart_command=if (killall -HUP rpc.nfsd && killall -HUP rpc.mountd); then /bin/true; else (rpc.nfsd ; rpc.mountd) fi
++exports_file=/etc/exports
++nfs_server=rpc.nfsd
++apply_cmd=exportfs -r
+diff -Nuar webmin-1.530.orig/exports/module.info webmin-1.530/exports/module.info
+--- webmin-1.530.orig/exports/module.info	2010-12-01 18:40:46.000000000 +0200
++++ webmin-1.530/exports/module.info	2010-12-13 19:34:57.639332175 +0200
+@@ -22,7 +22,7 @@
+ desc_ru_SU=Î¡‘¡Ãœ«… NFS
+ desc_tr=NFS Sunumlar˝
+ desc_de=NFS-Exporte
+-os_support=slackware-linux redhat-linux mandrake-linux debian-linux suse-linux united-linux open-linux turbo-linux corel-linux cobalt-linux aix msc-linux generic-linux gentoo-linux trustix-linux sol-linux coherent-linux openmamba-linux
++os_support=pardus-linux slackware-linux redhat-linux mandrake-linux debian-linux suse-linux united-linux open-linux turbo-linux corel-linux cobalt-linux aix msc-linux generic-linux gentoo-linux trustix-linux sol-linux coherent-linux openmamba-linux
+ desc_ru.UTF-8=–ö–∞—Ç–∞–ª–æ–≥–∏ NFS
+ desc_ko_KR.euc=NFS ≥ª∫∏≥ª±‚ 
+ desc_zh_CN=NFS  ‰≥ˆ
+diff -Nuar webmin-1.530.orig/fsdump/module.info webmin-1.530/fsdump/module.info
+--- webmin-1.530.orig/fsdump/module.info	2010-12-01 18:40:46.000000000 +0200
++++ webmin-1.530/fsdump/module.info	2010-12-13 20:58:51.517084337 +0200
+@@ -15,7 +15,7 @@
+ name=Dump
+ desc_ru_SU=Ú≈⁄≈“◊Œœ≈ Àœ–…“œ◊¡Œ…≈
+ desc_de=Dateisystem-Backup
+-os_support=redhat-linux mandrake-linux slackware-linux debian-linux suse-linux united-linux open-linux turbo-linux corel-linux cobalt-linux msc-linux generic-linux solaris freebsd macos gentoo-linux irix trustix-linux coherent-linux
++os_support=pardus-linux redhat-linux mandrake-linux slackware-linux debian-linux suse-linux united-linux open-linux turbo-linux corel-linux cobalt-linux msc-linux generic-linux solaris freebsd macos gentoo-linux irix trustix-linux coherent-linux
+ desc_ru.UTF-8=–†–µ–∑–µ—Ä–≤–Ω–æ–µ –∫–æ–ø–∏—Ä–æ–≤–∞–Ω–∏–µ
+ desc_ko_KR.euc=∆ƒ¿œ Ω√Ω∫≈€ πÈæ˜
+ depends=mount cron proc mailboxes 1.530
+diff -Nuar webmin-1.530.orig/grub/config-pardus-linux webmin-1.530/grub/config-pardus-linux
+--- webmin-1.530.orig/grub/config-pardus-linux	1970-01-01 02:00:00.000000000 +0200
++++ webmin-1.530/grub/config-pardus-linux	2010-11-08 20:48:10.000000000 +0200
+@@ -0,0 +1,3 @@
++menu_file=/boot/grub/menu.lst
++grub_path=/sbin/grub
++install=(hd0)
+diff -Nuar webmin-1.530.orig/inetd/config-pardus-linux webmin-1.530/inetd/config-pardus-linux
+--- webmin-1.530.orig/inetd/config-pardus-linux	1970-01-01 02:00:00.000000000 +0200
++++ webmin-1.530/inetd/config-pardus-linux	2010-11-14 00:28:43.000000000 +0200
+@@ -0,0 +1,15 @@
++show_empty=0
++extended_inetd=1
++rpc_inetd=1
++inetd_conf_file=/etc/xinetd.conf
++rpc_protocols=tcp udp
++restart_command=killall -HUP inetd
++services_file=/etc/services
++protocols_file=/etc/protocols
++rpc_file=/etc/rpc
++tcpd_path=/usr/sbin/tcpd
++allow_file=/etc/hosts.allow
++deny_file=/etc/hosts.deny
++sort_mode=0
++ipv6=0
++qm_mode=0
+diff -Nuar webmin-1.530.orig/init/config-pardus-linux webmin-1.530/init/config-pardus-linux
+--- webmin-1.530.orig/init/config-pardus-linux	1970-01-01 02:00:00.000000000 +0200
++++ webmin-1.530/init/config-pardus-linux	2010-08-29 05:23:39.000000000 +0300
+@@ -0,0 +1,16 @@
++soft_links=1
++show_opts=0
++init_base=/etc/rc.d
++init_dir=/etc/rc.d/init.d
++reboot_command=shutdown -r now
++shutdown_command=shutdown -h now
++order_digits=2
++inittab_id=id
++extra_init=/etc/rc.d/rc.local
++expert=0
++desc=1
++status_check=0
++order=0
++sort_mode=0
++boot_levels=2 3 5
++no_chkconfig=0
+diff -Nuar webmin-1.530.orig/init/module.info webmin-1.530/init/module.info
+--- webmin-1.530.orig/init/module.info	2010-12-01 18:40:46.000000000 +0200
++++ webmin-1.530/init/module.info	2010-12-13 21:02:42.622200621 +0200
+@@ -10,7 +10,7 @@
+ name=Boot Manager
+ desc_tr=AÁ˝l˝˛ ve Kapan˝˛
+ desc_de=System-Start und -Stop
+-os_support=solaris coherent-linux redhat-linux mandrake-linux debian-linux suse-linux united-linux hpux slackware-linux freebsd unixware openserver open-linux turbo-linux openbsd corel-linux cobalt-linux cobalt-linux osf1 irix aix macos netbsd msc-linux generic-linux trustix-linux gentoo-linux openmamba-linux windows
++os_support=pardus-linux solaris coherent-linux redhat-linux mandrake-linux debian-linux suse-linux united-linux hpux slackware-linux freebsd unixware openserver open-linux turbo-linux openbsd corel-linux cobalt-linux cobalt-linux osf1 irix aix macos netbsd msc-linux generic-linux trustix-linux gentoo-linux openmamba-linux windows
+ desc_sk=©tart a vypnutie
+ desc_zh_CN=“˝µº∫Õπÿª˙
+ risk=low medium high
+diff -Nuar webmin-1.530.orig/ldap-client/config-pardus-linux webmin-1.530/ldap-client/config-pardus-linux
+--- webmin-1.530.orig/ldap-client/config-pardus-linux	1970-01-01 02:00:00.000000000 +0200
++++ webmin-1.530/ldap-client/config-pardus-linux	2010-11-12 01:30:54.000000000 +0200
+@@ -0,0 +1,2 @@
++auth_ldap=/etc/openldap/ldap.conf
++secret=/etc/ldap.secret
+diff -Nuar webmin-1.530.orig/ldap-server/config-pardus-linux webmin-1.530/ldap-server/config-pardus-linux
+--- webmin-1.530.orig/ldap-server/config-pardus-linux	1970-01-01 02:00:00.000000000 +0200
++++ webmin-1.530/ldap-server/config-pardus-linux	2010-11-25 11:56:46.000000000 +0200
+@@ -0,0 +1,7 @@
++config_file=/etc/openldap/slapd.conf
++schema_dir=/etc/openldap/schema
++slapd=/usr/libexec/slapd
++ldap_user=ldap
++browse_max=100
++data_dir=/var/lib/openladp-data
++
+diff -Nuar webmin-1.530.orig/ldap-useradmin/config-pardus-linux webmin-1.530/ldap-useradmin/config-pardus-linux
+--- webmin-1.530.orig/ldap-useradmin/config-pardus-linux	1970-01-01 02:00:00.000000000 +0200
++++ webmin-1.530/ldap-useradmin/config-pardus-linux	2010-11-12 13:16:40.000000000 +0200
+@@ -0,0 +1,22 @@
++auth_ldap=/etc/openldap/ldap.conf
++imap_login=cyrus
++samba_class=sambaSamAccount
++imap_class=SuSEeMailObject
++imap_folders=old	public	sent-mail
++md5=0
++given=0
++slappasswd=slappasswd
++samba_def=0
++imap_def=0
++multi_fields=0
++mailfmt=0
++shells=fixed,ldap,passwd,shells
++secmode=0
++samba_gclass=sambaGroup
++alias_same=0
++given_class=inetOrgPerson
++person=1
++given_order=0
++imap_foldersep=.
++ldap_tls=0
++membox=0
+diff -Nuar webmin-1.530.orig/lpadmin/config-pardus-linux webmin-1.530/lpadmin/config-pardus-linux
+--- webmin-1.530.orig/lpadmin/config-pardus-linux	1970-01-01 02:00:00.000000000 +0200
++++ webmin-1.530/lpadmin/config-pardus-linux	2010-12-01 18:40:42.000000000 +0200
+@@ -0,0 +1,14 @@
++printcap_file=/etc/printcap
++gs_lib=
++iface_arg=
++gs_path=gs
++spool_dir=/var/spool/lpd
++gs_fontpath=
++smbclient_path=smbclient
++print_style=linux
++iface_perms=755
++driver_style=webmin
++show_status=0
++sort_mode=0
++display_mode=0
++show_jobs=0
+diff -Nuar webmin-1.530.orig/lpadmin/module.info webmin-1.530/lpadmin/module.info
+--- webmin-1.530.orig/lpadmin/module.info	2010-12-01 18:40:45.000000000 +0200
++++ webmin-1.530/lpadmin/module.info	2010-12-13 21:12:05.862077710 +0200
+@@ -10,7 +10,7 @@
+ name=lpadmin
+ desc_tr=Yaz˝c˝ Yˆnetimi
+ desc_de=Druckerverwaltung
+-os_support=solaris coherent-linux redhat-linux mandrake-linux slackware-linux suse-linux united-linux debian-linux freebsd hpux unixware macos open-linux turbo-linux openbsd corel-linux irix netbsd msc-linux generic-linux gentoo-linux trustix-linux openmamba-linux aix
++os_support=pardus-linux solaris coherent-linux redhat-linux mandrake-linux slackware-linux suse-linux united-linux debian-linux freebsd hpux unixware macos open-linux turbo-linux openbsd corel-linux irix netbsd msc-linux generic-linux gentoo-linux trustix-linux openmamba-linux aix
+ desc_zh_CN=¥Ú”°ª˙π‹¿Ì
+ risk=low medium high
+ desc_ja_JP.UTF-8=„Éó„É™„É≥„ÇøÁÆ°ÁêÜ
+diff -Nuar webmin-1.530.orig/man/config-pardus-linux webmin-1.530/man/config-pardus-linux
+--- webmin-1.530.orig/man/config-pardus-linux	1970-01-01 02:00:00.000000000 +0200
++++ webmin-1.530/man/config-pardus-linux	2010-12-01 18:40:43.000000000 +0200
+@@ -0,0 +1,10 @@
++search_cmd=man -k PAGE
++man_dir=/usr/man:/usr/share/man:/usr/local/man:/usr/local/share/man
++man_cmd_sect=man SECTION PAGE
++man_cmd=man PAGE
++list_cmd_sect=man -w SECTION PAGE
++list_cmd=man -w PAGE
++man2html_path=man2html
++doc_dir=/usr/doc /usr/share/doc
++howto_dir=/usr/doc/HOWTO /usr/doc/HOWTO/mini /usr/share/doc/HOWTO /usr/share/doc/HOWTO/mini
++kernel_dir=/usr/src/linux/Documentation
+diff -Nuar webmin-1.530.orig/man/module.info webmin-1.530/man/module.info
+--- webmin-1.530.orig/man/module.info	2010-12-01 18:40:46.000000000 +0200
++++ webmin-1.530/man/module.info	2010-12-13 21:14:11.006077589 +0200
+@@ -9,7 +9,7 @@
+ name=Man
+ desc_tr=K˝lavuz Sayfalar
+ desc_de=Systemdokumentation
+-os_support=solaris corel-linux debian-linux open-linux redhat-linux mandrake-linux slackware-linux solaris suse-linux united-linux turbo-linux freebsd openbsd cobalt-linux lfs-linux irix aix hpux macos netbsd msc-linux osf1 generic-linux openserver gentoo-linux trustix-linux sol-linux coherent-linux openmamba-linux
++os_support=pardus-linux solaris corel-linux debian-linux open-linux redhat-linux mandrake-linux slackware-linux solaris suse-linux united-linux turbo-linux freebsd openbsd cobalt-linux lfs-linux irix aix hpux macos netbsd msc-linux osf1 generic-linux openserver gentoo-linux trustix-linux sol-linux coherent-linux openmamba-linux
+ desc_sk=SystÈmov· dokument·cia
+ desc_zh_CN= π”√ ÷≤·
+ risk=low medium high
+diff -Nuar webmin-1.530.orig/mount/config-pardus-linux webmin-1.530/mount/config-pardus-linux
+--- webmin-1.530.orig/mount/config-pardus-linux	1970-01-01 02:00:00.000000000 +0200
++++ webmin-1.530/mount/config-pardus-linux	2010-08-29 05:23:39.000000000 +0300
+@@ -0,0 +1,5 @@
++long_fstypes=1
++fstab_file=/etc/fstab
++smbclient_path=smbclient
++nmblookup_path=nmblookup
++show_used=1
+diff -Nuar webmin-1.530.orig/mount/module.info webmin-1.530/mount/module.info
+--- webmin-1.530.orig/mount/module.info	2010-12-01 18:40:46.000000000 +0200
++++ webmin-1.530/mount/module.info	2010-12-13 21:16:59.229075135 +0200
+@@ -12,7 +12,7 @@
+ name=Disk Manager
+ desc_tr=Disk ve A Dosya Sistemi
+ desc_de=Lokale und Netzwerk-Dateisysteme
+-os_support=slackware-linux redhat-linux mandrake-linux solaris debian-linux suse-linux united-linux freebsd hpux unixware open-linux turbo-linux corel-linux openbsd cobalt-linux lfs-linux msc-linux generic-linux gentoo-linux irix netbsd trustix-linux sol-linux coherent-linux openmamba-linux
++os_support=pardus-linux slackware-linux redhat-linux mandrake-linux solaris debian-linux suse-linux united-linux freebsd hpux unixware open-linux turbo-linux corel-linux openbsd cobalt-linux lfs-linux msc-linux generic-linux gentoo-linux irix netbsd trustix-linux sol-linux coherent-linux openmamba-linux
+ desc_zh_CN=¥≈≈Ã∫ÕÕ¯¬ÁŒƒº˛œµÕ≥
+ risk=low medium high
+ desc_ja_JP.UTF-8=„Éá„Ç£„Çπ„ÇØ„Åä„Çà„Å≥„Éç„ÉÉ„Éà„ÉØ„Éº„ÇØÔΩ•„Éï„Ç°„Ç§„É´„Ç∑„Çπ„ÉÜ„É†
+diff -Nuar webmin-1.530.orig/mysql/config-pardus-linux webmin-1.530/mysql/config-pardus-linux
+--- webmin-1.530.orig/mysql/config-pardus-linux	1970-01-01 02:00:00.000000000 +0200
++++ webmin-1.530/mysql/config-pardus-linux	2010-11-08 19:02:15.000000000 +0200
+@@ -0,0 +1,18 @@
++start_cmd=service mysql_server start
++mysql=/usr/bin/mysql
++mysqldump=/usr/bin/mysqldump
++mysqlimport=/usr/bin/mysqlimport
++mysqladmin=/usr/bin/mysqladmin
++mysqlshow=/usr/bin/mysqlshow
++perpage=25
++style=0
++add_mode=1
++nodbi=0
++access=*: *
++blob_mode=0
++date_subs=0
++passwd_mode=0
++max_dbs=50
++my_cnf=/etc/mysql/my.cnf
++max_text=1000
++nopwd=0
+diff -Nuar webmin-1.530.orig/net/module.info webmin-1.530/net/module.info
+--- webmin-1.530.orig/net/module.info	2010-12-01 18:40:45.000000000 +0200
++++ webmin-1.530/net/module.info	2010-12-13 21:18:30.533074687 +0200
+@@ -11,7 +11,7 @@
+ name=Networking
+ desc_tr=A Yap˝land˝rmas˝
+ desc_de=Netzwerkkonfiguration
+-os_support=solaris coherent-linux redhat-linux/5.0-* mandrake-linux united-linux suse-linux/6.0-* open-linux unixware turbo-linux/4.0 freebsd/3.2-* openbsd debian-linux/2.2-* cobalt-linux/2.2-* msc-linux gentoo-linux macos/1.5-* trustix-linux slackware-linux/8.0-* openmamba-linux cygwin windows
++os_support=pardus-linux solaris coherent-linux redhat-linux/5.0-* mandrake-linux united-linux suse-linux/6.0-* open-linux unixware turbo-linux/4.0 freebsd/3.2-* openbsd debian-linux/2.2-* cobalt-linux/2.2-* msc-linux gentoo-linux macos/1.5-* trustix-linux slackware-linux/8.0-* openmamba-linux cygwin windows
+ desc_sk=Konfigur·cia siete
+ desc_zh_CN=Õ¯¬Á≈‰÷√
+ risk=low medium high
+diff -Nuar webmin-1.530.orig/net/pardus-linux-lib.pl webmin-1.530/net/pardus-linux-lib.pl
+--- webmin-1.530.orig/net/pardus-linux-lib.pl	1970-01-01 02:00:00.000000000 +0200
++++ webmin-1.530/net/pardus-linux-lib.pl	2010-11-25 11:45:28.000000000 +0200
+@@ -0,0 +1,770 @@
++# redhat-linux-lib.pl
++# Networking functions for redhat linux
++
++if ($gconfig{'os_type'} eq 'openmamba-linux') {
++	# OpenMamba Linux
++	$net_scripts_dir = "/etc/sysconfig/network-devices";
++	$devices_dir = "/etc/sysconfig/network-devices";
++	}
++else {
++	# Redhat, Mandrake, etc..
++	$net_scripts_dir = "/etc/sysconfig/network-scripts";
++	$devices_dir = "/etc/sysconfig/networking/devices";
++	}
++$network_config = "/etc/sysconfig/network";
++$static_route_config = "/etc/sysconfig/static-routes";
++$sysctl_config = "/etc/sysctl.conf";
++
++# Redhat 7.2+ and Mandrake 9.1+ support separate gateways in each interface file
++$supports_dev_gateway = ($gconfig{'os_type'} eq 'redhat-linux' &&
++			 $gconfig{'os_version'} >= 7.2) ||
++			($gconfig{'os_type'} eq 'mandrake-linux' &&
++			 $gconfig{'os_version'} >= 9.1) ||
++			($gconfig{'os_type'} eq 'coherant-linux' &&
++			 $gconfig{'os_version'} >= 3.0) ||
++			($gconfig{'os_type'} eq 'trustix-linux');
++
++# Redhat 8.0+ and Mandrake 9.1+ have a separate file for static routes for
++# each interface
++$supports_dev_routes = ($gconfig{'os_type'} eq 'redhat-linux' &&
++		        $gconfig{'os_version'} >= 8.0) ||
++			($gconfig{'os_type'} eq 'mandrake-linux' &&
++			 $gconfig{'os_version'} >= 9.1) ||
++			($gconfig{'os_type'} eq 'coherant-linux' &&
++			 $gconfig{'os_version'} >= 3.0) ||
++			($gconfig{'os_type'} eq 'trustix-linux');
++
++# Redhat 10 (ES/AS 3) uses route-$dev instead of $dev.route
++$supports_route_dev = ($gconfig{'os_type'} eq 'redhat-linux' &&
++		       $gconfig{'os_version'} >= 10.0) ||
++		      ($gconfig{'os_type'} eq 'coherant-linux' &&
++		       $gconfig{'os_version'} >= 3.0);
++
++# Redhat 9.0+ uses the ONPARENT variable for virtual interfaces
++$uses_on_parent = ($gconfig{'os_type'} eq 'redhat-linux' &&
++		   $gconfig{'os_version'} >= 9.0) ||
++		  ($gconfig{'os_type'} eq 'mandrake-linux' &&
++		   $gconfig{'os_version'} >= 9.1) ||
++		  ($gconfig{'os_type'} eq 'coherant-linux' &&
++		   $gconfig{'os_version'} >= 3.0);
++
++# Redhat versions 7.2 and above allow the MTU to be set at boot time
++$supports_mtu = ($gconfig{'os_type'} eq 'redhat-linux' &&
++		 $gconfig{'os_version'} >= 7.2) ||
++		($gconfig{'os_type'} eq 'coherant-linux' &&
++ 		 $gconfig{'os_version'} >= 3.0);
++
++do 'linux-lib.pl';
++
++# boot_interfaces()
++# Returns a list of interfaces brought up at boot time
++sub boot_interfaces
++{
++local(@rv, $f);
++opendir(CONF, &translate_filename($net_scripts_dir));
++while($f = readdir(CONF)) {
++	local (%conf, $b);
++	if ($f =~ /^ifcfg-([a-z0-9:\.]+)\-range([a-z0-9\.\_]+)$/) {
++		# A range of addresses
++		&read_env_file("$net_scripts_dir/$f", \%conf);
++		$b->{'fullname'} = "$1-range$2";
++		$b->{'name'} = $1;
++		$b->{'range'} = $2;
++		$b->{'start'} = $conf{'IPADDR_START'};
++		$b->{'end'} = $conf{'IPADDR_END'};
++		$b->{'num'} = $conf{'CLONENUM_START'};
++		$b->{'up'} = 1;
++		$b->{'edit'} = 1;
++		$b->{'desc'} = $conf{'NAME'};
++		$b->{'index'} = scalar(@rv);
++		$b->{'file'} = "$net_scripts_dir/$f";
++		push(@rv, $b);
++		}
++	elsif ($f =~ /^ifcfg-[a-z0-9:\.]+$/ && $f !~ /\.(bak|old)$/i) {
++		# Normal interface
++		&read_env_file("$net_scripts_dir/$f", \%conf);
++		$b->{'fullname'} = $conf{'DEVICE'};
++		if ($b->{'fullname'} =~ /(\S+):(\d+)/) {
++			$b->{'name'} = $1;
++			$b->{'virtual'} = $2;
++			}
++		else { $b->{'name'} = $b->{'fullname'}; }
++		$b->{'up'} = defined($conf{'ONPARENT'}) && $b->{'virtual'} ne '' ?
++				($conf{'ONPARENT'} eq 'yes') :
++				($conf{'ONBOOT'} eq 'yes');
++		$b->{'address'} = $conf{'IPADDR'};
++		$b->{'netmask'} = $conf{'NETMASK'};
++		$b->{'broadcast'} = $conf{'BROADCAST'};
++		if (!$b->{'broadcast'} && $b->{'address'} && $b->{'netmask'}) {
++			$b->{'broadcast'} = &compute_broadcast($b->{'address'},
++							       $b->{'netmask'});
++			}
++		$b->{'gateway'} = $conf{'GATEWAY'};
++		$b->{'mtu'} = $conf{'MTU'};
++		$b->{'ether'} = $conf{'MACADDR'};
++		$b->{'dhcp'} = ($conf{'BOOTPROTO'} eq 'dhcp');
++		$b->{'bootp'} = ($conf{'BOOTPROTO'} eq 'bootp');
++		$b->{'edit'} = ($b->{'name'} !~ /^ppp|irlan/);
++		$b->{'desc'} = $conf{'NAME'};
++		$b->{'index'} = scalar(@rv);
++		$b->{'file'} = "$net_scripts_dir/$f";
++		push(@rv, $b);
++		}
++	}
++closedir(CONF);
++return @rv;
++}
++
++# save_interface(&details)
++# Create or update a boot-time interface
++sub save_interface
++{
++local(%conf);
++local $name = $_[0]->{'range'} ne "" ? $_[0]->{'name'}."-range".
++				       $_[0]->{'range'} :
++	      $_[0]->{'virtual'} ne "" ? $_[0]->{'name'}.":".$_[0]->{'virtual'}
++				       : $_[0]->{'name'};
++&lock_file("$net_scripts_dir/ifcfg-$name");
++&read_env_file("$net_scripts_dir/ifcfg-$name", \%conf);
++if ($_[0]->{'range'} ne "") {
++	# Special case - saving a range
++	$conf{'IPADDR_START'} = $_[0]->{'start'};
++	$conf{'IPADDR_END'} = $_[0]->{'end'};
++	$conf{'CLONENUM_START'} = $_[0]->{'num'};
++	}
++else {
++	# Saving a normal interface
++	$conf{'DEVICE'} = $name;
++	$conf{'IPADDR'} = $_[0]->{'address'};
++	$conf{'NETMASK'} = $_[0]->{'netmask'};
++	if ($_[0]->{'address'} && $_[0]->{'netmask'}) {
++		$conf{'NETWORK'} = &compute_network($_[0]->{'address'},
++						    $_[0]->{'netmask'});
++		}
++	else {
++		$conf{'NETWORK'} = '';
++		}
++	$conf{'BROADCAST'} = $_[0]->{'broadcast'};
++	if ($_[0]->{'gateway'}) {
++		$conf{'GATEWAY'} = $_[0]->{'gateway'};
++		}
++	else {
++		delete($conf{'GATEWAY'});
++		}
++	$conf{'MTU'} = $_[0]->{'mtu'};
++	$conf{'MACADDR'} = $_[0]->{'ether'};
++	$conf{'ONBOOT'} = $_[0]->{'up'} ? "yes" : "no";
++	$conf{'ONPARENT'} = $_[0]->{'up'} ? "yes" : "no"
++		if ($_[0]->{'virtual'} ne '');
++	$conf{'BOOTPROTO'} = $_[0]->{'bootp'} ? "bootp" :
++			     $_[0]->{'dhcp'} ? "dhcp" : "none";
++	}
++$conf{'NAME'} = $_[0]->{'desc'};
++&write_env_file("$net_scripts_dir/ifcfg-$name", \%conf);
++if (-d &translate_filename($devices_dir)) {
++	&link_file("$net_scripts_dir/ifcfg-$name",
++		   "$devices_dir/ifcfg-$name");
++	}
++&unlock_file("$net_scripts_dir/ifcfg-$name");
++}
++
++# delete_interface(&details)
++# Delete a boot-time interface
++sub delete_interface
++{
++local $name = $_[0]->{'range'} ne "" ? $_[0]->{'name'}."-range".
++				       $_[0]->{'range'} :
++	      $_[0]->{'virtual'} ne "" ? $_[0]->{'name'}.":".$_[0]->{'virtual'}
++				       : $_[0]->{'name'};
++&lock_file("$net_scripts_dir/ifcfg-$name");
++&unlink_file("$net_scripts_dir/ifcfg-$name");
++if (-d &translate_filename($devices_dir)) {
++	&unlink_file("$devices_dir/ifcfg-$name");
++	}
++&unlock_file("$net_scripts_dir/ifcfg-$name");
++}
++
++# can_edit(what)
++# Can some boot-time interface parameter be edited?
++sub can_edit
++{
++if ($supports_mtu) {
++	return 1;
++	}
++else {
++	return $_[0] ne "mtu";
++	}
++}
++
++# valid_boot_address(address)
++# Is some address valid for a bootup interface
++sub valid_boot_address
++{
++return &check_ipaddress($_[0]);
++}
++
++# get_hostname()
++sub get_hostname
++{
++local %conf;
++&read_env_file($network_config, \%conf);
++if ($conf{'HOSTNAME'}) {
++	return $conf{'HOSTNAME'};
++	}
++return &get_system_hostname(1);
++}
++
++# save_hostname(name)
++sub save_hostname
++{
++local $old = &get_hostname();
++local %conf;
++&system_logged("hostname $_[0] >/dev/null 2>&1");
++&open_lock_tempfile(HOST, ">/etc/HOSTNAME");
++&print_tempfile(HOST, $_[0],"\n");
++&close_tempfile(HOST);
++&lock_file($network_config);
++&read_env_file($network_config, \%conf);
++$conf{'HOSTNAME'} = $_[0];
++&write_env_file($network_config, \%conf);
++&unlock_file($network_config);
++
++# If any ifcfg-XXX files have the old hostname in DHCP_HOSTNAME, fix it
++foreach my $b (&boot_interfaces()) {
++	local %ifc;
++	&read_env_file($b->{'file'}, \%ifc);
++	if ($ifc{'DHCP_HOSTNAME'} eq $old) {
++		$ifc{'DHCP_HOSTNAME'} = $_[0];
++		&lock_file($b->{'file'});
++		&write_env_file($b->{'file'}, \%ifc);
++		&unlock_file($b->{'file'});
++		}
++	}
++undef(@main::get_system_hostname);	# clear cache
++}
++
++# get_domainname()
++sub get_domainname
++{
++local $d;
++&execute_command("domainname", undef, \$d, undef);
++chop($d);
++return $d;
++}
++
++# save_domainname(domain)
++sub save_domainname
++{
++local %conf;
++&execute_command("domainname ".quotemeta($_[0]));
++&read_env_file($network_config, \%conf);
++if ($_[0]) {
++	$conf{'NISDOMAIN'} = $_[0];
++	}
++else {
++	delete($conf{'NISDOMAIN'});
++	}
++&write_env_file($network_config, \%conf);
++}
++
++sub routing_config_files
++{
++local @rv = ( $network_config, $sysctl_config );
++if (!$supports_dev_routes) {
++	push(@rv, $static_route_config);
++	}
++else {
++	foreach my $dir ($devices_dir, $net_scripts_dir) {
++		opendir(DIR, &translate_filename($dir));
++		while(my $f = readdir(DIR)) {
++			if ($f =~ /^([a-z]+\d*(\.\d+)?(:\d+)?)\.route$/ ||
++			    $f =~ /^route\-([a-z]+\d*(\.\d+)?(:\d+)?)$/) {
++				push(@rv, "$dir/$f");
++				}
++			}
++		closedir(DIR);
++		}
++	}
++return @rv;
++}
++
++sub network_config_files
++{
++return ( "/etc/HOSTNAME", $network_config );
++}
++
++sub routing_input
++{
++local (%conf, @st, @hr, %sysctl);
++&read_env_file($network_config, \%conf);
++if (!$supports_dev_gateway) {
++	# show default router and device
++	print &ui_table_row($text{'routes_default'},
++		&ui_opt_textbox("gateway", $conf{'GATEWAY'}, 15,
++				$text{'routes_none'}));
++
++	print &ui_table_row($text{'routes_device2'},
++		&ui_opt_textbox("gatewaydev", $conf{'GATEWAYDEV'}, 6,
++			        $text{'routes_none'}));
++	}
++else {
++	# multiple default routers can exist, one per interface
++	my @table;
++	local $r = 0;
++	if ($conf{'GATEWAY'}) {
++		push(@table, [ &interface_sel("gatewaydev$r",
++					      $conf{'GATEWAYDEV'} || "*"),
++			       &ui_textbox("gateway$r", $conf{'GATEWAY'}, 15),
++			     ]);
++		$r++;
++		}
++	local @boot = &boot_interfaces();
++	foreach $b (grep { $_->{'gateway'} && $_->{'virtual'} eq '' } @boot) {
++		push(@table, [ &interface_sel("gatewaydev$r", $b->{'name'}),
++			       &ui_textbox("gateway$r", $b->{'gateway'}, 15),
++			     ]);
++		$r++;
++		}
++	push(@table, [ &interface_sel("gatewaydev$r"),
++		       &ui_textbox("gateway$r", undef, 15) ]);
++	print &ui_table_row($text{'routes_default2'},
++		&ui_columns_table(
++			[ $text{'routes_ifc'}, $text{'routes_gateway'} ],
++			undef, \@table, undef, 1));
++	}
++
++# show routing
++if ($gconfig{'os_version'} < 7.0) {
++	print &ui_table_row($text{'routes_forward'},
++		&ui_yesno_radio("forward",
++				$conf{'FORWARD_IPV4'} eq "yes" ? 1 : 0));
++	}
++else {
++	&read_env_file($sysctl_config, \%sysctl);
++	print &ui_table_row($text{'routes_forward'},
++		&ui_yesno_radio("forward",
++				$sysctl{'net.ipv4.ip_forward'} ? 1 : 0));
++	}
++
++if (!$supports_dev_routes) {
++	# get static routes from single file
++	&open_readfile(STATIC, $static_route_config);
++	while(<STATIC>) {
++		if (/(\S+)\s+net\s+(\S+)\s+netmask\s+(\S+)\s+gw\s+(\S+)/) {
++			push(@st, [ $1, $2, $3, $4 ]);
++			}
++		elsif (/(\S+)\s+host\s+(\S+)\s+gw\s+(\S+)/) {
++			push(@st, [ $1, $2, '255.255.255.255', $3 ]);
++			}
++		elsif (/(\S+)\s+net\s+(\S+)\s+netmask\s+(\S+)/) {
++			push(@hr, [ $1, $2, $3 ]);
++			}
++		elsif (/(\S+)\s+host\s+(\S+)/) {
++			push(@hr, [ $1, $2, '255.255.255.255' ]);
++			}
++		}
++	close(STATIC);
++	}
++else {
++	# get static routes from per-interface files
++	local $f;
++	opendir(DIR, &translate_filename($devices_dir));
++	while($f = readdir(DIR)) {
++		if ($f =~ /^([a-z]+\d*(\.\d+)?(:\d+)?)\.route$/ ||
++		    $f =~ /^route\-([a-z]+\d*(\.\d+)?(:\d+)?)$/) {
++			local $dev = $1;
++			local (%rfile, $i);
++			&read_env_file("$devices_dir/$f", \%rfile);
++			for($i=0; defined($rfile{"ADDRESS$i"}); $i++) {
++				if ($rfile{"GATEWAY$i"}) {
++					push(@st, [ $dev, $rfile{"ADDRESS$i"},
++							  $rfile{"NETMASK$i"},
++							  $rfile{"GATEWAY$i"}]);
++					}
++				else {
++					push(@hr, [ $dev, $rfile{"ADDRESS$i"},
++							  $rfile{"NETMASK$i"} ||
++							  "255.255.255.255" ]);
++					}
++				}
++			}
++		}
++	closedir(DIR);
++	}
++
++# Show static network routes
++my @table;
++for($i=0; $i<=@st; $i++) {
++	local $st = $st[$i];
++	push(@table, [ &ui_textbox("dev_$i", $st->[0], 6),
++		       &ui_textbox("net_$i", $st->[1], 15),
++		       &ui_textbox("netmask_$i", $st->[2], 15),
++		       &ui_textbox("gw_$i", $st->[3], 15) ]);
++	}
++print &ui_table_row($text{'routes_static'},
++	&ui_columns_table([ $text{'routes_ifc'}, $text{'routes_net'},
++			    $text{'routes_mask'}, $text{'routes_gateway'} ],
++			  undef, \@table, undef, 1));
++
++# Show static host routes
++my @table;
++for($i=0; $i<=@hr; $i++) {
++	local $st = $hr[$i];
++	push(@table, [ &ui_textbox("ldev_$i", $st->[0], 6),
++		       &ui_textbox("lnet_$i", $st->[1], 15),
++		       &ui_textbox("lnetmask_$i", $st->[2], 15) ]);
++	}
++print &ui_table_row($text{'routes_local'},
++	&ui_columns_table([ $text{'routes_ifc'}, $text{'routes_net'},
++			    $text{'routes_mask'} ],
++			  undef, \@table, undef, 1));
++}
++
++sub parse_routing
++{
++local (%conf, @st, %sysctl, %st, @boot);
++&lock_file($network_config);
++&read_env_file($network_config, \%conf);
++if (!$supports_dev_gateway) {
++	# Just update a single file
++	if ($in{'gateway_def'}) { delete($conf{'GATEWAY'}); }
++	elsif (!gethostbyname($in{'gateway'})) {
++		&error(&text('routes_edefault', $in{'gateway'}));
++		}
++	else { $conf{'GATEWAY'} = $in{'gateway'}; }
++
++	if ($in{'gatewaydev_def'}) { delete($conf{'GATEWAYDEV'}); }
++	elsif ($in{'gatewaydev'} !~ /^\S+$/) {
++		&error(&text('routes_edevice', $in{'gatewaydev'}));
++		}
++	else { $conf{'GATEWAYDEV'} = $in{'gatewaydev'}; }
++	}
++else {
++	# Multiple defaults can be specified!
++	local ($r, $b);
++	@boot = grep { $->{'virtual'} eq '' } &boot_interfaces();
++	foreach $b (@boot) {
++		delete($b->{'gateway'});
++		}
++	delete($conf{'GATEWAY'});
++	delete($conf{'GATEWAYDEV'});
++
++	for($r=0; defined($in{"gatewaydev$r"}); $r++) {
++		next if (!$in{"gatewaydev$r"});
++		&check_ipaddress($in{"gateway$r"}) ||
++			&error(&text('routes_edefault2', $r+1));
++		if ($in{"gatewaydev$r"} eq "*") {
++			# For any interface
++			$conf{'GATEWAY'} && &error(&text('routes_eclash'));
++			$conf{'GATEWAY'} = $in{"gateway$r"};
++			}
++		else {
++			# For a specific interface
++			local ($b) = grep { $_->{'fullname'} eq $in{"gatewaydev$r"} } @boot;
++			$b->{'gateway'} && &error(&text('routes_eclash2',
++							$in{"gatewaydev$r"}));
++			$b->{'gateway'} = $in{"gateway$r"};
++			}
++		}
++	}
++
++if ($gconfig{'os_version'} < 7.0) {
++	if ($in{'forward'}) { $conf{'FORWARD_IPV4'} = 'yes'; }
++	else { $conf{'FORWARD_IPV4'} = 'no'; }
++	}
++else {
++	&lock_file($sysctl_config);
++	&read_env_file($sysctl_config, \%sysctl);
++	$sysctl{'net.ipv4.ip_forward'} = $in{'forward'};
++	}
++
++# Parse static and local routes
++for($i=0; defined($dev = $in{"dev_$i"}); $i++) {
++	next if (!$dev);
++	$net = $in{"net_$i"}; $netmask = $in{"netmask_$i"}; $gw = $in{"gw_$i"};
++	$dev =~ /^\S+$/ || &error(&text('routes_edevice', $dev));
++	gethostbyname($net) || &error(&text('routes_enet', $net));
++	&check_ipaddress($netmask) || &error(&text('routes_emask', $netmask));
++	gethostbyname($gw) || &error(&text('routes_egateway', $gw));
++	if ($netmask eq "255.255.255.255") {
++		push(@st, "$dev host $net gw $gw\n");
++		}
++	else {
++		push(@st, "$dev net $net netmask $netmask gw $gw\n");
++		}
++	push(@{$st{$dev}}, [ $net, $netmask, $gw ]);
++	}
++for($i=0; defined($dev = $in{"ldev_$i"}); $i++) {
++	$net = $in{"lnet_$i"}; $netmask = $in{"lnetmask_$i"};
++	next if (!$dev && !$net);
++	$dev =~ /^\S+$/ || &error(&text('routes_edevice', $dev));
++	gethostbyname($net) || $net =~ /^(\S+)\/(\d+)$/ && gethostbyname($1) ||
++		&error(&text('routes_enet', $net));
++	&check_ipaddress($netmask) || &error(&text('routes_emask', $netmask));
++	if ($netmask eq "255.255.255.255") {
++		push(@st, "$dev host $net\n");
++		}
++	else {
++		push(@st, "$dev net $net netmask $netmask\n");
++		}
++	push(@{$st{$dev}}, [ $net, $netmask ]);
++	}
++if (!$supports_dev_routes) {
++	# Write to a single file
++	&open_lock_tempfile(STATIC, ">$static_route_config");
++	&print_tempfile(STATIC, @st);
++	&close_tempfile(STATIC);
++	}
++else {
++	# Write to one file per interface (delete old, then save new/updated)
++	local $f;
++	opendir(DIR, &translate_filename($devices_dir));
++	while($f = readdir(DIR)) {
++		if (($f =~ /^([a-z]+\d*(\.\d+)?(:\d+)?)\.route$/ ||
++		     $f =~ /^route\-([a-z]+\d*(\.\d+)?(:\d+)?)$/) && !$st{$1}) {
++			&unlink_logged("$devices_dir/$f");
++			&unlink_logged("$net_scripts_dir/$f");
++			}
++		}
++	closedir(DIR);
++	foreach $dev (keys %st) {
++		$f = $supports_route_dev ? "route-$dev" : "$dev.route";
++		local (%rfile, $i);
++		for($i=0; $i<@{$st{$dev}}; $i++) {
++			$rfile{"ADDRESS$i"} = $st{$dev}->[$i]->[0];
++			$rfile{"NETMASK$i"} = $st{$dev}->[$i]->[1];
++			$rfile{"GATEWAY$i"} = $st{$dev}->[$i]->[2];
++			}
++		&lock_file("$devices_dir/$f");
++		&write_env_file("$devices_dir/$f", \%rfile);
++		&unlock_file("$devices_dir/$f");
++		&lock_file("$net_scripts_dir/$f");
++		&link_file("$devices_dir/$f", "$net_scripts_dir/$f");
++		&unlock_file("$net_scripts_dir/$f");
++		}
++	}
++&write_env_file($network_config, \%conf);
++&unlock_file($network_config);
++if (%sysctl) {
++	&write_env_file($sysctl_config, \%sysctl);
++	&unlock_file($sysctl_config);
++	}
++if (@boot) {
++	local $b;
++	foreach $b (@boot) {
++		&save_interface($b);
++		}
++	}
++}
++
++sub os_feedback_files
++{
++opendir(DIR, $net_scripts_dir);
++local @f = readdir(DIR);
++closedir(DIR);
++return ( (map { "$net_scripts_dir/$_" } grep { /^ifcfg-/ } @f),
++	 $network_config, $static_route_config, "/etc/resolv.conf",
++	 "/etc/nsswitch.conf", "/etc/HOSTNAME" );
++}
++
++# interface_sel(name, value)
++# Returns a menu for all boot-time interfaces
++sub interface_sel
++{
++local $rv = "<select name=$_[0]>\n";
++$rv .= sprintf "<option value='' %s>&nbsp;\n",
++	$_[1] eq "" ? "selected" : "";
++$rv .= sprintf "<option value='*' %s>%s\n",
++	$_[1] eq "*" ? "selected" : "", $text{'routes_any'};
++@boot_interfaces_cache = &boot_interfaces() if (!@boot_interfaces_cache);
++foreach $b (@boot_interfaces_cache) {
++	next if ($b->{'virtual'} ne '');
++	$rv .= sprintf "<option value=%s %s>%s\n",
++	    $b->{'name'}, $b->{'name'} eq $_[1] ? "selected" : "", $b->{'name'};
++	}
++$rv .= "</select>\n";
++return $rv;
++}
++
++# apply_network()
++# Apply the interface and routing settings
++sub apply_network
++{
++&system_logged("(cd / ; /etc/init.d/network stop ; /etc/init.d/network start) >/dev/null 2>&1");
++}
++
++# apply_interface(&iface)
++# Calls an OS-specific function to make a boot-time interface active
++sub apply_interface
++{
++local $out = &backquote_logged("cd / ; ifdown '$_[0]->{'fullname'}' >/dev/null 2>&1 </dev/null ; ifup '$_[0]->{'fullname'}' 2>&1 </dev/null");
++return $? || $out =~ /error/i ? $out : undef;
++}
++
++# unapply_interface(&iface)
++# Calls an OS-specific function to make a boot-time interface inactive
++#sub unapply_interface
++#{
++#local $out = &backquote_logged("cd / ; ifdown '$_[0]->{'fullname'}' 2>&1 </dev/null");
++#return $? ? $out : undef;
++#}
++
++# get_default_gateway()
++# Returns the default gateway IP (if one is set) and device (if set) boot time
++# settings.
++sub get_default_gateway
++{
++local %conf;
++&read_env_file($network_config, \%conf);
++local @boot = &boot_interfaces();
++local ($gifc) = grep { $_->{'gateway'} && $_->{'virtual'} eq '' } @boot;
++return ( $gifc->{'gateway'}, $gifc->{'fullname'} ) if ($gifc);
++
++return $conf{'GATEWAY'} ? ( $conf{'GATEWAY'}, $conf{'GATEWAYDEV'} ) : ( );
++}
++
++# set_default_gateway(gateway, device)
++# Sets the default gateway to the given IP accessible via the given device,
++# in the boot time settings.
++sub set_default_gateway
++{
++&lock_file($network_config);
++&read_env_file($network_config, \%conf);
++if (!$supports_dev_gateway) {
++	# Just update the network config file
++	local %conf;
++	if ($_[0]) {
++		$conf{'GATEWAY'} = $_[0];
++		$conf{'GATEWAYDEV'} = $_[1];
++		}
++	else {
++		delete($conf{'GATEWAY'});
++		delete($conf{'GATEWAYDEV'});
++		}
++	}
++else {
++	# Set the gateway in the specified interface file, and clear the rest
++	local @boot = grep { $->{'virtual'} eq '' } &boot_interfaces();
++	foreach $b (@boot) {
++		delete($b->{'gateway'});
++		if ($_[0] && $b->{'fullname'} eq $_[1]) {
++			$b->{'gateway'} = $_[0];
++			&save_interface($b);
++			}
++		}
++	delete($conf{'GATEWAY'});
++	delete($conf{'GATEWAYDEV'});
++	}
++&write_env_file($network_config, \%conf);
++&unlock_file($network_config);
++}
++
++# supports_ranges()
++# Returns 1 for newer redhat versions
++sub supports_ranges
++{
++return ($gconfig{'os_type'} eq 'redhat-linux' &&
++	$gconfig{'os_version'} >= 7.3) ||
++       ($gconfig{'os_type'} eq 'mandrake-linux' &&
++	$gconfig{'os_version'} >= 8.0) ||
++       ($gconfig{'os_type'} eq 'coherant-linux' &&
++	$gconfig{'os_version'} >= 3.0);
++}
++
++# range_input([&interface])
++# Print HTML for a IP range interface
++sub range_input
++{
++local $new = !$_[0];
++
++# Range description
++print &ui_table_row($text{'ifcs_desc'},
++	&ui_textbox("desc", $_[0] ? $_[0]->{'desc'} : undef, 60));
++
++# Base interface
++my $ifaceinput;
++if ($new) {
++	$ifaceinput = &ui_select("iface", $_[0]->{'name'},
++		[ map { $_->{'fullname'} } grep { $b->{'virtual'} eq '' }
++		      &boot_interfaces() ]);
++	}
++else {
++	$ifaceinput = "<tt>$_[0]->{'name'}</tt>";
++	}
++print &ui_table_row($text{'range_iface'}, $ifaceinput);
++
++# Name for this range
++print &ui_table_row($text{'range_name'},
++	$new ? &ui_textbox("range", undef, 10)
++	     : "<tt>$_[0]->{'range'}</tt>");
++
++# Start
++print &ui_table_row($text{'range_start'},
++	&ui_textbox("start", $_[0]->{'start'}, 15));
++
++# Stop
++print &ui_table_row($text{'range_end'},
++	&ui_textbox("end", $_[0]->{'end'}, 15));
++
++# Base number
++print &ui_table_row($text{'range_num'},
++	&ui_textbox("num", $_[0]->{'num'}, 5));
++}
++
++# parse_range(&range, &in)
++sub parse_range
++{
++local %in = %{$_[1]};
++if ($in{'new'}) {
++	$_[0]->{'name'} = $in{'iface'};
++	$in{'range'} =~ /^[a-z0-9\.\_]+$/ || &error($text{'range_ename'});
++	$_[0]->{'range'} = $in{'range'};
++	$_[0]->{'fullname'} = $in{'iface'}."-range".$in{'range'};
++	}
++$_[0]->{'desc'} = $in{'desc'};
++
++&check_ipaddress($in{'start'}) || &error($text{'range_estart'});
++$_[0]->{'start'} = $in{'start'};
++
++&check_ipaddress($in{'end'}) || &error($text{'range_eend'});
++$_[0]->{'end'} = $in{'end'};
++
++local @sip = split(/\./, $in{'start'});
++local @eip = split(/\./, $in{'end'});
++$sip[0] == $eip[0] && $sip[1] == $eip[1] && $sip[2] == $eip[2] ||
++	&error($text{'range_eclass'});
++$sip[3] <= $eip[3] || &error($text{'range_ebefore'});
++
++$in{'num'} =~ /^\d+$/ || &error($text{'range_enum'});
++$_[0]->{'num'} = $in{'num'};
++}
++
++# get_dhcp_hostname()
++# Returns 0 if the hostname is not set by DHCP, 1 if it is, or -1 if this
++# feature is not supported on this OS.
++sub get_dhcp_hostname
++{
++return -1 if ($gconfig{'os_type'} ne 'redhat-linux' ||
++	      $gconfig{'os_version'} < 11);
++local @boot = &boot_interfaces();
++local ($eth) = grep { $_->{'fullname'} =~ /^eth\d+$/ } @boot;
++return -1 if (!$eth);
++local %eth;
++&read_env_file($eth->{'file'}, \%eth);
++return $eth{'DHCP_HOSTNAME'} ne &get_system_hostname();
++}
++
++# save_dhcp_hostname(set)
++# If called with a parameter of 0, the hostname is fixed and not set by
++# DHCP. If called with 1, the hostname is chosen by DHCP.
++sub save_dhcp_hostname
++{
++}
++
++sub boot_iface_hardware
++{
++return $_[0] =~ /^eth/;
++}
++
++1;
++
+diff -Nuar webmin-1.530.orig/openslp/config-pardus-linux webmin-1.530/openslp/config-pardus-linux
+--- webmin-1.530.orig/openslp/config-pardus-linux	1970-01-01 02:00:00.000000000 +0200
++++ webmin-1.530/openslp/config-pardus-linux	2010-08-29 05:23:41.000000000 +0300
+@@ -0,0 +1,5 @@
++slpd_conf=/etc/slp.conf
++slpd_reg=/etc/slp.reg
++slpd_log=/var/log/slpd.log
++slpd_pid=/var/run/slpd.pid
++slpd=/usr/sbin/slpd
+diff -Nuar webmin-1.530.orig/os_list.txt webmin-1.530/os_list.txt
+--- webmin-1.530.orig/os_list.txt	2010-12-01 18:40:41.000000000 +0200
++++ webmin-1.530/os_list.txt	2010-12-14 15:21:50.658669290 +0200
+@@ -1,3 +1,16 @@
++#Pardus
++Pardus			        1.0	                pardus-linux	$1	`cat /etc/pardus-release` =~ /Pardus\s+1.0\s+/i
++Pardus			       2007	                pardus-linux	$1	`cat /etc/pardus-release` =~ /Pardus\s+2007\s+/i
++Pardus			       2007.1 Felis chaus	pardus-linux	$1	`cat /etc/pardus-release` =~ /Pardus\s+2007.1\s+/i
++Pardus			       2007.2 Caracac caracal	pardus-linux	$1	`cat /etc/pardus-release` =~ /Pardus\s+2007.2\s+/i
++Pardus			       2007.3 Lynx lynx	        pardus-linux	$1	`cat /etc/pardus-release` =~ /Pardus\s+2007.3\s+/i
++Pardus			       2008	                pardus-linux	$1	`cat /etc/pardus-release` =~ /Pardus\s+2008\s+/i
++Pardus			       2008.1 Hyaena hyaena               pardus-linux	$1	`cat /etc/pardus-release` =~ /Pardus\s+2008.1\s+/i
++Pardus			       2008.2 Canis aureus	          pardus-linux	$1	`cat /etc/pardus-release` =~ /Pardus\s+2008.2\s+/i
++Pardus			       2009	                pardus-linux	$1	`cat /etc/pardus-release` =~ /Pardus\s+2009\s+/i
++Pardus			       2009.1 Anthropoides virgo	                pardus-linux	$1	`cat /etc/pardus-release` =~ /Pardus\s+2009.1\s+/i
++Pardus			       2009.2 Geronticus eremita	pardus-linux	$1	`cat /etc/pardus-release` =~ /Pardus\s+2009.2\s+/i
++Pardus			       2011	                pardus-linux	$1	`cat /etc/pardus-release` =~ /Pardus\s+2011\s+/i
+ # Sun Solaris
+ Sun Solaris			2.5.1	solaris		2.5.1	$uname =~ /SunOS.*\s5\.5\.1\s/i
+ Sun Solaris			2.6	solaris		2.6	$uname =~ /SunOS.*\s5\.6\s/i
+diff -Nuar webmin-1.530.orig/pam/config-pardus-linux webmin-1.530/pam/config-pardus-linux
+--- webmin-1.530.orig/pam/config-pardus-linux	1970-01-01 02:00:00.000000000 +0200
++++ webmin-1.530/pam/config-pardus-linux	2010-08-29 05:23:40.000000000 +0300
+@@ -0,0 +1,4 @@
++lib_dirs=/lib/security
++ignore=README .*\.rpmsave
++pam_dir=/etc/pam.d
++mod_equiv=pam_unix_acct.so=pam_pwdb.so pam_unix_auth.so=pam_pwdb.so pam_unix_passwd.so=pam_pwdb.so pam_unix_session.so=pam_pwdb.so pam_unix_sess.so=pam_pwdb.so pam_unix.so=pam_pwdb.so
+diff -Nuar webmin-1.530.orig/pam/module.info webmin-1.530/pam/module.info
+--- webmin-1.530.orig/pam/module.info	2010-12-01 18:40:46.000000000 +0200
++++ webmin-1.530/pam/module.info	2010-12-13 21:21:34.118200316 +0200
+@@ -18,7 +18,7 @@
+ longdesc=Configure the PAM authentication steps used by services such as telnet, POP and FTP.
+ name=PAM
+ desc_ru_SU=·’‘≈Œ‘…∆…À¡√…— PAM
+-os_support=redhat-linux mandrake-linux open-linux debian-linux/2.2-* corel-linux suse-linux united-linux turbo-linux cobalt-linux msc-linux generic-linux gentoo-linux slackware-linux{-d "/etc/pam.d"} trustix-linux sol-linux coherent-linux openmamba-linux macos
++os_support=pardus-linux redhat-linux mandrake-linux open-linux debian-linux/2.2-* corel-linux suse-linux united-linux turbo-linux cobalt-linux msc-linux generic-linux gentoo-linux slackware-linux{-d "/etc/pam.d"} trustix-linux sol-linux coherent-linux openmamba-linux macos
+ desc_de=PAM-Authentifizierung
+ desc_ru.UTF-8=–ê—É—Ç–µ–Ω—Ç–∏—Ñ–∏–∫–∞—Ü–∏—è PAM
+ desc_ko_KR.euc=PAM ¿Œ¡ı
+diff -Nuar webmin-1.530.orig/pap/config-pardus-linux webmin-1.530/pap/config-pardus-linux
+--- webmin-1.530.orig/pap/config-pardus-linux	1970-01-01 02:00:00.000000000 +0200
++++ webmin-1.530/pap/config-pardus-linux	2010-12-01 18:40:42.000000000 +0200
+@@ -0,0 +1,8 @@
++pap_file=/etc/ppp/pap-secrets
++encrypt_pass=0
++ppp_options=/etc/ppp/options
++login_config=/etc/mgetty+sendfax/login.config
++dialin_config=/etc/mgetty+sendfax/dialin.config
++pppd=pppd
++mgetty=mgetty
++serials=/dev/ttyS[0-9]*
+diff -Nuar webmin-1.530.orig/pap/module.info webmin-1.530/pap/module.info
+--- webmin-1.530.orig/pap/module.info	2010-12-01 18:40:45.000000000 +0200
++++ webmin-1.530/pap/module.info	2010-12-13 21:24:39.237228551 +0200
+@@ -6,7 +6,7 @@
+ desc_es=Nombres y Claves de Acceso de Usuarios PPP
+ desc_ru_RU=—Â‚Â PPP
+ desc_cz=PPP Dialin server
+-os_support=redhat-linux mandrake-linux suse-linux united-linux slackware-linux debian-linux open-linux turbo-linux corel-linux msc-linux generic-linux gentoo-linux cobalt-linux solaris trustix-linux coherent-linux openmamba-linux
++os_support=pardus-linux redhat-linux mandrake-linux suse-linux united-linux slackware-linux debian-linux open-linux turbo-linux corel-linux msc-linux generic-linux gentoo-linux cobalt-linux solaris trustix-linux coherent-linux openmamba-linux
+ desc_de=PPP Einwahl-Server
+ desc_nl=PPP Inbel Server
+ desc=PPP Dialin Server
+diff -Nuar webmin-1.530.orig/phpini/config-pardus-linux webmin-1.530/phpini/config-pardus-linux
+--- webmin-1.530.orig/phpini/config-pardus-linux	1970-01-01 02:00:00.000000000 +0200
++++ webmin-1.530/phpini/config-pardus-linux	2010-11-10 20:36:40.000000000 +0200
+@@ -0,0 +1 @@
++php_ini=/etc/php/php.ini
+diff -Nuar webmin-1.530.orig/postfix/config-pardus-linux webmin-1.530/postfix/config-pardus-linux
+--- webmin-1.530.orig/postfix/config-pardus-linux	1970-01-01 02:00:00.000000000 +0200
++++ webmin-1.530/postfix/config-pardus-linux	2010-11-10 15:35:30.000000000 +0200
+@@ -0,0 +1,31 @@
++postfix_control_command=/usr/sbin/postfix
++postfix_config_command=/usr/sbin/postconf
++postfix_config_file=/etc/postfix/main.cf
++postfix_aliases_table_command=/usr/sbin/postalias
++postfix_newaliases_command=/usr/bin/newaliases
++postfix_lookup_table_command=/usr/sbin/postmap
++postfix_queue_command=/usr/sbin/postqueue
++postfix_super_command=/usr/sbin/postsuper
++start_cmd=service postfix start
++stop_cmd=service postfix stop
++max_records=200
++perpage=20
++mailq_dir=/var/spool/postfix
++mailq_cmd=/usr/bin/mailq
++postcat_cmd=/usr/sbin/postcat
++sort_mode=0
++fwd_mode=0
++mailq_sort=0
++mailq_count=0
++delete_warn=1
++mailq_sort=0
++check_config=1
++top_buttons=1
++wrap_width=80
++index_check=1
++postfix_master=/etc/postfix/master.cf
++columns=2
++show_cmts=0
++prefix_cmts=0
++ldap_doms=0
++delete_confirm=1
+diff -Nuar webmin-1.530.orig/postgresql/config-pardus-linux webmin-1.530/postgresql/config-pardus-linux
+--- webmin-1.530.orig/postgresql/config-pardus-linux	1970-01-01 02:00:00.000000000 +0200
++++ webmin-1.530/postgresql/config-pardus-linux	2010-11-10 15:01:20.000000000 +0200
+@@ -0,0 +1,23 @@
++basedb=template1
++pass=
++pid_file=/usr/bin/postmaster
++hba_conf=/var/lib/postgresql/data/pg_hba.conf
++stop_cmd=
++start_cmd=service postgresql-server start
++stop_cmd=service postgresql-server stop
++perpage=25
++psql=/usr/bin/psql
++login=postgres
++nodbi=0
++dump_cmd=/usr/bin/pg_dump
++rstr_cmd=/usr/bin/pg_restore
++sameunix=0
++access=*: *
++blob_mode=0
++add_mode=1
++date_subs=0
++style=0
++max_dbs=50
++simple_sched=0
++access_own=0
++max_text=1000
+diff -Nuar webmin-1.530.orig/pserver/config-pardus-linux webmin-1.530/pserver/config-pardus-linux
+--- webmin-1.530.orig/pserver/config-pardus-linux	1970-01-01 02:00:00.000000000 +0200
++++ webmin-1.530/pserver/config-pardus-linux	2010-11-12 01:06:48.000000000 +0200
+@@ -0,0 +1,3 @@
++cvs=/usr/bin/cvs
++cvsroot=/usr/share/cvs
++view_header=header.html
+diff -Nuar webmin-1.530.orig/quota/module.info webmin-1.530/quota/module.info
+--- webmin-1.530.orig/quota/module.info	2010-12-01 18:40:46.000000000 +0200
++++ webmin-1.530/quota/module.info	2010-12-13 21:38:12.869078656 +0200
+@@ -10,7 +10,7 @@
+ name=Quota
+ desc_tr=Disk Kotalar˝
+ desc_de=Festplatten-Quotas
+-os_support=solaris redhat-linux mandrake-linux slackware-linux debian-linux suse-linux united-linux hpux freebsd open-linux unixware turbo-linux openbsd corel-linux cobalt-linux msc-linux generic-linux gentoo-linux irix netbsd macos trustix-linux sol-linux coherent-linux openmamba-linux
++os_support=pardus-linux solaris redhat-linux mandrake-linux slackware-linux debian-linux suse-linux united-linux hpux freebsd open-linux unixware turbo-linux openbsd corel-linux cobalt-linux msc-linux generic-linux gentoo-linux irix netbsd macos trustix-linux sol-linux coherent-linux openmamba-linux
+ desc_zh_CN=¥≈≈Ãœﬁ∂Ó
+ risk=low medium high
+ desc_ja_JP.UTF-8=„Éá„Ç£„Çπ„ÇØ„ÅÆÂâ≤„ÇäÂΩì„Å¶
+diff -Nuar webmin-1.530.orig/samba/config-pardus-linux webmin-1.530/samba/config-pardus-linux
+--- webmin-1.530.orig/samba/config-pardus-linux	1970-01-01 02:00:00.000000000 +0200
++++ webmin-1.530/samba/config-pardus-linux	2010-11-14 00:54:20.000000000 +0200
+@@ -0,0 +1,14 @@
++list_printers_command=lpc status | grep "[A-z0-9]:" | sed -e 's/://g'
++smb_passwd=/usr/bin/smbpasswd
++dont_convert=-499
++samba_password_program=/usr/bin/smbpasswd
++samba_status_program=/usr/bin/smbstatus
++samba_server=/usr/sbin/smbd
++name_server=/usr/sbin/nmbd
++smb_conf=/etc/samba/smb.conf
++text_lists=0
++run_from_inetd=1
++sort_mode=0
++smbgroupedit=/usr/bin/smbgroupedit
++pdbedit=/usr/bin/pdbedit
++net=/usr/bin/net
+diff -Nuar webmin-1.530.orig/samba/module.info webmin-1.530/samba/module.info
+--- webmin-1.530.orig/samba/module.info	2010-12-01 18:40:46.000000000 +0200
++++ webmin-1.530/samba/module.info	2010-12-13 21:39:16.357200735 +0200
+@@ -22,7 +22,7 @@
+ desc_ru_SU=Ê¡ Ã-”≈“◊≈“ Samba
+ desc_tr=Samba Windows Dosya Payla˛˝m˝
+ desc_de=Samba - SMB/CIFS-Fileserver
+-os_support=solaris redhat-linux mandrake-linux debian-linux slackware-linux aix suse-linux united-linux hpux freebsd osf1 irix open-linux openserver unixware turbo-linux openbsd corel-linux cobalt-linux lfs-linux macos netbsd msc-linux generic-linux gentoo-linux trustix-linux sol-linux coherent-linux openmamba-linux
++os_support=pardus-linux solaris redhat-linux mandrake-linux debian-linux slackware-linux aix suse-linux united-linux hpux freebsd osf1 irix open-linux openserver unixware turbo-linux openbsd corel-linux cobalt-linux lfs-linux macos netbsd msc-linux generic-linux gentoo-linux trustix-linux sol-linux coherent-linux openmamba-linux
+ desc_ru.UTF-8=–§–∞–π–ª-—Å–µ—Ä–≤–µ—Ä Samba
+ desc_ko_KR.euc=ªÔπŸ ¿©µµøÏ ∆ƒ¿œ ∞¯¿Ø
+ desc_zh_CN=Samba Windows Œƒº˛π≤œÌ
+diff -Nuar webmin-1.530.orig/sarg/config-pardus-linux webmin-1.530/sarg/config-pardus-linux
+--- webmin-1.530.orig/sarg/config-pardus-linux	1970-01-01 02:00:00.000000000 +0200
++++ webmin-1.530/sarg/config-pardus-linux	2010-11-12 23:43:19.000000000 +0200
+@@ -0,0 +1,4 @@
++sarg=/usr/local/bin/sarg
++sarg_conf=/usr/local/etc/sarg.conf
++clear=1
++naked=0
+diff -Nuar webmin-1.530.orig/spam/config-pardus-linux webmin-1.530/spam/config-pardus-linux
+--- webmin-1.530.orig/spam/config-pardus-linux	1970-01-01 02:00:00.000000000 +0200
++++ webmin-1.530/spam/config-pardus-linux	2010-11-13 01:02:20.000000000 +0200
+@@ -0,0 +1,11 @@
++local_cf=/etc/mail/spamassassin/local.cf
++spamassassin=/usr/bin/spamassassin
++sa_learn=/usr/bin/sa-learn
++procmailrc=/etc/procmailrc
++warn_procmail=1
++call_spam=1
++processes=spamd amavisd
++procmail_cmd=*
++mode=0
++addto=0
++max_awl=200
+diff -Nuar webmin-1.530.orig/squid/config-pardus-linux webmin-1.530/squid/config-pardus-linux
+--- webmin-1.530.orig/squid/config-pardus-linux	1970-01-01 02:00:00.000000000 +0200
++++ webmin-1.530/squid/config-pardus-linux	2010-11-16 00:07:00.000000000 +0200
+@@ -0,0 +1,20 @@
++log_dir=/var/log/squid
++squid_path=squid
++cache_dir=/var/spool/squid
++squid_conf=/etc/squid/squid.conf
++pid_file=/var/run/squid.pid
++cachemgr_path=/usr/lib/squid/cachemgr.cgi
++start_cmd=service squid start
++stop_cmd=service squid stop
++squid_restart=service squid restart
++cal_max=50000
++cal_args=-aw
++crypt_conf=0
++sort_conf=0
++sync_create=0
++sync_delete=0
++sync_modify=1
++cal_fmt=w
++cal_all=1
++restart_pos=0
++squidclient=squidclient
+diff -Nuar webmin-1.530.orig/squid/module.info webmin-1.530/squid/module.info
+--- webmin-1.530.orig/squid/module.info	2010-12-01 18:40:46.000000000 +0200
++++ webmin-1.530/squid/module.info	2010-12-13 22:05:24.990089302 +0200
+@@ -22,7 +22,7 @@
+ desc_ru_SU=“œÀ”…-”≈“◊≈“ Squid
+ desc_tr=Squid Proxy Sunucusu
+ desc_de=Squid Proxy-Server
+-os_support=solaris hpux redhat-linux mandrake-linux debian-linux suse-linux united-linux slackware-linux freebsd osf1 irix aix open-linux openserver unixware turbo-linux openbsd corel-linux cobalt-linux lfs-linux macos netbsd msc-linux generic-linux gentoo-linux trustix-linux sol-linux coherent-linux openmamba-linux
++os_support=pardus-linux solaris hpux redhat-linux mandrake-linux debian-linux suse-linux united-linux slackware-linux freebsd osf1 irix aix open-linux openserver unixware turbo-linux openbsd corel-linux cobalt-linux lfs-linux macos netbsd msc-linux generic-linux gentoo-linux trustix-linux sol-linux coherent-linux openmamba-linux
+ desc_ru.UTF-8=–ü—Ä–æ–∫—Å–∏-—Å–µ—Ä–≤–µ—Ä Squid
+ syslog=1
+ desc_ko_KR.euc=Squid «¡∑œΩ√ º≠πˆ
+diff -Nuar webmin-1.530.orig/sshd/config-pardus-linux webmin-1.530/sshd/config-pardus-linux
+--- webmin-1.530.orig/sshd/config-pardus-linux	1970-01-01 02:00:00.000000000 +0200
++++ webmin-1.530/sshd/config-pardus-linux	2010-11-08 20:27:50.000000000 +0200
+@@ -0,0 +1,11 @@
++sshd_path=/usr/sbin/sshd
++sshd_config=/etc/ssh/sshd_config
++client_config=/etc/ssh/ssh_config
++pid_file=/var/run/sshd.pid
++keygen_path=/usr/bin/ssh-keygen
++start_cmd=service openssh start
++sync_create=0
++sync_auth=1
++sync_pass=0
++sync_gnupg=0
++t
+\ Dosya sonunda yenisatƒ±r yok.
+diff -Nuar webmin-1.530.orig/syslog/config-pardus-linux webmin-1.530/syslog/config-pardus-linux
+--- webmin-1.530.orig/syslog/config-pardus-linux	1970-01-01 02:00:00.000000000 +0200
++++ webmin-1.530/syslog/config-pardus-linux	2010-11-11 00:56:07.000000000 +0200
+@@ -0,0 +1,15 @@
++pri_all=1
++syslogd=/usr/sbin/syslogd
++m4_conf=0
++syslog_conf=/etc/syslog.conf
++pri_dir=1
++pid_file=/var/run/syslogd.pid
++facilities=auth authpriv cron daemon kern lpr mail mark news syslog user uucp local0 local1 local2 local3 local4 local5 local6 local7
++m4_path=
++sync=1
++pipe=1
++tags=0
++lines=20
++socket=0
++compressed=1
++others=1
+diff -Nuar webmin-1.530.orig/xinetd/config-pardus-linux webmin-1.530/xinetd/config-pardus-linux
+--- webmin-1.530.orig/xinetd/config-pardus-linux	1970-01-01 02:00:00.000000000 +0200
++++ webmin-1.530/xinetd/config-pardus-linux	2010-11-08 22:07:56.000000000 +0200
+@@ -0,0 +1,5 @@
++xinetd_conf=/etc/xinetd.conf
++protocols_file=/etc/protocols
++pid_file=/var/run/xinetd.pid
++start_cmd=service xinetd start
++lookup_servs=1
