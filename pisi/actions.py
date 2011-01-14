@@ -13,9 +13,12 @@ from pisi.actionsapi import get
 def install():
     shelltools.export("HOME",get.workDIR())
     work_dir = get.workDIR()+"/"+get.srcDIR()
-    shelltools.system("find %s -name '*.cgi' ;find %s -name '*.pl' | perl %s/perlpath.pl /usr/bin/perl -" % (work_dir, work_dir, work_dir))
+  #  shelltools.system("find %s -name '*.cgi' ;find %s -name '*.pl' | perl %s/perlpath.pl /usr/bin/perl -" % (work_dir, work_dir, work_dir))
+    shelltools.system("sed -i -e 's/\/usr\/local\/bin\/perl/\/usr\/bin\/perl/g' **/*.cgi")
+    shelltools.system("sed -i -e 's/\/usr\/local\/bin\/perl/\/usr\/bin\/perl/g' *.cgi")
+    shelltools.system("sed -i -e 's/\/usr\/local\/bin\/perl/\/usr\/bin\/perl/g' **/*.pl")
+    shelltools.system("sed -i -e 's/\/usr\/local\/bin\/perl/\/usr\/bin\/perl/g' *.pl")
     pisitools.dodir("/usr/share/webmin")
-
     pisitools.dodir("/etc/webmin")
     pisitools.dodir("/var/log/webmin")
     pisitools.dodir("/tmp/.webmin")
@@ -34,7 +37,7 @@ def install():
     shelltools.export("autothird","1")
     shelltools.export("nouninstall", "1")
     shelltools.export("noperlpath","1")
-    shelltools.export("nopostinstall","1")
+    shelltools.export("nopostinstall","")
     shelltools.export("tempdir", "%s/tmp/.webmin" % get.installDIR())
     shelltools.system("./setup.sh %s/usr/share/webmin"  % get.installDIR())
     pisitools.dosed("%s/etc/webmin/install-dir" % get.installDIR(),get.installDIR()+"/", "/")
