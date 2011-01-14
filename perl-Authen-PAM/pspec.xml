@@ -1,0 +1,42 @@
+<?xml version="1.0" ?> Perl interface to the PAM libraryi
+<!DOCTYPE PISI SYSTEM "http://www.pardus.org.tr/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>perl-Authen-PAM</Name>
+            <Homepage>http://nik.pelov.name/Authen-PAM/</Homepage>
+        <Packager>
+            <Name>Ahmet Can KEPENEK</Name>
+            <Email>ahmetcan196@gmail.com</Email>
+        </Packager>
+        <License>Artistic</License>
+        <IsA>library</IsA>
+        <Summary>a Perl interface to the PAM library</Summary>
+        <Description>This module provides a Perl interface to the PAM library.</Description>
+        <Archive sha1sum="648dc61f67fc17571072c3e1221827230eb2820b" type="targz">http://www.perl.com/CPAN/authors/id/N/NI/NIKIP/Authen-PAM-0.16.tar.gz</Archive>
+        <BuildDependencies>
+            <Dependency version="5.10.1">perl</Dependency>
+        </BuildDependencies>
+    </Source>
+   
+    <Package>
+        <Name>perl-Authen-PAM</Name>
+        <RuntimeDependencies>
+            <Dependency versionFrom="5.10.1">perl</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="man">/usr/share/man</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="1">
+            <Date>2011-01-14</Date>
+            <Version>0.16</Version>
+            <Comment>First release.</Comment>
+            <Name>Ahmet Can Kepenek</Name>
+            <Email>ahmetcan196@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>
+
