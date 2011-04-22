@@ -13,10 +13,10 @@
         <Summary>Webmin is a web-based interface for system administration for Unix</Summary>
         <Description>Using any browser that supports tables and forms, you can setup user
         accounts, Apache, internet services, DNS, file sharing and so on.</Description>
-    <Archive sha1sum="fd48747d0174e0369db0e1824189206e21d96987" type="targz">http://prdownloads.sourceforge.net/webadmin/webmin-1.530.tar.gz</Archive>
+    <Archive sha1sum="75ed0d768839527df0490d477426953de01d36ec" type="targz">http://prdownloads.sourceforge.net/webadmin/webmin-1.540.tar.gz</Archive>
     <Patches>
         <Patch level="1">webmin-1.170-setup-nocheck.patch</Patch>
-        <Patch level="1">pardus.patch</Patch>
+        <Patch level="1">phpini_useradmin.patch</Patch>
     </Patches>
     </Source>
 
@@ -24,16 +24,19 @@
         <Name>webmin</Name>
         <Files>
             <Path fileType="config">/etc</Path>
-            <Path fileType="data">/usr/share</Path>
+            <Path fileType="all">/usr/share</Path>
             <Path fileType="data">/var/log</Path>
             <Path fileType="data">/tmp</Path>
         </Files>
+        <Provides>
+            <COMAR script="service.py">System.Service</COMAR>
+        </Provides>
     </Package>
 
     <History>
         <Update release="1">
             <Date>2010-12-24</Date>
-            <Version>1.530</Version>
+            <Version>1.540</Version>
             <Comment>First release.</Comment>
             <Name>Serhat Demircan Ahmet Can Kepenek</Name>
             <Email>demircan.serhat@gmail.com ahmetcan196@gmail.com</Email>
