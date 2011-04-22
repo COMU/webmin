@@ -4,15 +4,25 @@
 from comar.service import *
 import os 
 
-serviceType="server"
-serviceDesc=_({"en": "Webmin",
-                     "tr": "Webmin"})
-start = "/etc/webmin/start"
-stop = "/etc/webmin/stop"
-pidFile = "/var/webmin/miniserv.pid"
+
+serviceType = "server"
+serviceDesc = _({"en": "Server",
+    "tr": "Sunucu"})
+
+from comar.service import *
+
 @synchronized
 def start():
-    os.system("/etc/webmin/start")
+    startService(command="/etc/webmin/start",
+            args="start",
+            pidfile="/var/webmin/miniserv.pid",
+            donotify=True)
+
 @synchronized
 def stop():
-    stopService("/etc/webmin/stop")
+    stopService(command="/etc/webmin/stop",
+            args="stop",
+            donotify=True)
+
+def status():
+    return isServiceRunning("/var/webmin/miniserv.pid")
