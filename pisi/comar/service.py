@@ -15,7 +15,7 @@ from comar.service import *
 def start():
     startService(command="/etc/webmin/start",
             args="start",
-            pidfile="/var/webmin/miniserv.pid",
+            pidfile="/var/log/webmin/miniserv.pid",
             donotify=True)
 
 @synchronized
@@ -25,4 +25,4 @@ def stop():
             donotify=True)
 
 def status():
-    return isServiceRunning("/var/webmin/miniserv.pid")
+    return isServiceRunning("/var/log/webmin/miniserv.pid")
